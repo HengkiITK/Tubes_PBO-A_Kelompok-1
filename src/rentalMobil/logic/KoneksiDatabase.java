@@ -19,11 +19,11 @@ public class KoneksiDatabase {
         password = "";
       
     }
-    public void set_connect(Connection connect){
-        this.connect = connect;
-    }
     
-    public Connection get_connect() {
+    
+    
+    
+    public Connection koneksi_database() {
         if(connect == null) {
             try {
                 connect = DriverManager.getConnection(url, userName, password);

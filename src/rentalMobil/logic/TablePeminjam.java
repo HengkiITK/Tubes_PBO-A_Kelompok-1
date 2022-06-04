@@ -6,10 +6,11 @@ import java.sql.Statement;
 import javax.swing.table.DefaultTableModel;
 import rentalMobil.view.ViewInputDataPeminjam;
 
-public class TablePeminjam  extends ViewInputDataPeminjam {
+public class TablePeminjam  {
     private final KoneksiDatabase nyambung = new KoneksiDatabase();
+
     
-    private Connection conn;
+
     private ResultSet result;
     private Statement stm;
     private String query;
@@ -42,7 +43,6 @@ public class TablePeminjam  extends ViewInputDataPeminjam {
     
     void TablePeminjam (Connection conn, ResultSet result, Statement stm, 
             int id_peminjam, String nama, String alamat, int telepon, String email) {
-        this.conn = conn;
         this.result = result;
         this.stm = stm;
         this.id_peminjam = id_peminjam;
@@ -52,10 +52,6 @@ public class TablePeminjam  extends ViewInputDataPeminjam {
         this.email = email;
     }
     
-    public TablePeminjam() {
-        initComponents();
-        get_data();
-    }
     
     public int get_idpeminjam() {
         return id_peminjam;
@@ -97,14 +93,6 @@ public class TablePeminjam  extends ViewInputDataPeminjam {
         this.email = email;
     }
     
-    public Connection get_conn() {
-        return conn;
-    }
-    
-    public void set_conn(Connection conn) {
-        this.conn = nyambung.get_connect();
-    }
-    
     public ResultSet get_result() {
         return result;
     }
@@ -118,12 +106,8 @@ public class TablePeminjam  extends ViewInputDataPeminjam {
     }
     
     public void set_stm(Statement stm) {
-        try {
-            this.stm = conn.createStatement();
-        }
-        catch(Exception e){
-            e.printStackTrace();
-        }
+        this.stm = stm;
+       
     }
    
     public String get_query() {
@@ -161,7 +145,7 @@ public class TablePeminjam  extends ViewInputDataPeminjam {
 //    }                                           
 
    
-    public ResultSet get_data() {
+    public void load_table(javax.swing.JTable tableDataPeminjam) {
         try {
 //            conn = nyambung.get_connect();
 //            stm = conn.createStatement();
@@ -185,8 +169,6 @@ public class TablePeminjam  extends ViewInputDataPeminjam {
         catch(Exception e) {
             e.printStackTrace();
         }
-        
-        return result;
     }
 
 }

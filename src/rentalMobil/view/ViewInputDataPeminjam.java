@@ -3,17 +3,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package rentalMobil.view;
+import javax.swing.table.DefaultTableModel;
+import rentalMobil.logic.TablePeminjam ;
 
 /**
  *
  * @author ASUS-TUF
  */
-public class ViewInputDataPeminjam extends javax.swing.JFrame {
-
+public class ViewInputDataPeminjam extends javax.swing.JFrame{
+    private TablePeminjam TablePeminjam;
     /**
    
      */
     public ViewInputDataPeminjam() {
+        TablePeminjam = new TablePeminjam();
         initComponents();
     }
 
@@ -343,7 +346,14 @@ public class ViewInputDataPeminjam extends javax.swing.JFrame {
     private void TextFieldEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldEmailActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TextFieldEmailActionPerformed
-
+    
+    
+    public void get_addDataTable() {
+        
+        DefaultTableModel tableModel = (DefaultTableModel) tableDataPeminjam.getModel();
+        
+        
+    }
     /**
      * @param args the command line arguments
      */
@@ -378,6 +388,8 @@ public class ViewInputDataPeminjam extends javax.swing.JFrame {
                 new ViewInputDataPeminjam().setVisible(true);
             }
         });
+      
+        TablePeminjam.load_table(tableDataPeminjam);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
