@@ -6,14 +6,8 @@ import java.sql.Statement;
 import javax.swing.table.DefaultTableModel;
 import rentalMobil.view.ViewInputDataPeminjam;
 
-public class TablePeminjam  {
-    private final KoneksiDatabase nyambung = new KoneksiDatabase();
-
-    
-
-    private ResultSet result;
-    private Statement stm;
-    private String query;
+public class TablePeminjam extends KoneksiDatabase{
+  
     private int id_peminjam;
     private String nama;
     private String alamat;
@@ -43,84 +37,14 @@ public class TablePeminjam  {
     
     void TablePeminjam (Connection conn, ResultSet result, Statement stm, 
             int id_peminjam, String nama, String alamat, int telepon, String email) {
-        this.result = result;
-        this.stm = stm;
-        this.id_peminjam = id_peminjam;
-        this.nama = nama;
-        this.alamat = alamat;
-        this.telepon = telepon;
-        this.email = email;
-    }
-    
-    
-    public int get_idpeminjam() {
-        return id_peminjam;
-    }
-    
-    public void set_idpeminjam(int id_peminjam) {
-        this.id_peminjam = id_peminjam;
-    }
-    
-    public String get_nama() {
-        return nama;
-    }
-    
-    public void set_nama(String nama) {
-        this.nama = nama;
-    }
-    
-    public String get_alamat() {
-        return alamat;
-    }
-    
-    public void set_alamat(String alamat) {
-        this.alamat = alamat;
-    }
-    
-    public int get_telepon () {
-        return telepon;
-    }
-    
-    public void set_telepon(int telepon) {
-        this.telepon = telepon;
-    }
-    
-    public String get_email() {
-        return email;
-    }
-    
-    public void set_email(String email) {
-        this.email = email;
-    }
-    
-    public ResultSet get_result() {
-        return result;
-    }
-    
-    public void set_result(ResultSet result) {
-        this.result = result;
-    }
-    
-    public Statement get_stm() {
-        return stm;
-    }
-    
-    public void set_stm(Statement stm) {
-        this.stm = stm;
-       
-    }
-   
-    public String get_query() {
-        return query;
-    }
-    
-    public void set_query(String query) {
-        this.query = query;
         
+        this.id_peminjam = id_peminjam;
+        this.nama = nama;
+        this.alamat = alamat;
+        this.telepon = telepon;
+        this.email = email;
     }
     
-    
-
 //    private void buttonInputActionPerformed(java.awt.event.ActionEvent evt) {                                            
 //        try {
 //           
@@ -147,23 +71,21 @@ public class TablePeminjam  {
    
     public void load_table(javax.swing.JTable tableDataPeminjam) {
         try {
-//            conn = nyambung.get_connect();
-//            stm = conn.createStatement();
-          
-            result = stm.executeQuery("SELECT * FROM datapeminjam");
-            
             DefaultTableModel tableModel = (DefaultTableModel) tableDataPeminjam.getModel();
             
-            tableModel.setRowCount(0);
+            ResultSet dataTable = querry_selectAll("datapeminjam");
             
-            while(result.next()) {
-                String id = result.getString("id_peminjam");
-                String nama = result.getString("Nama");
-                String telepon = result.getString("Telepon");
-                String email = result.getString("Email");
-                String alamat = result.getString("Alamat");
+            tableModel.setRowCount(2);
+            while(dataTable.next()) {
+                System.out.print(dataTable.getString("nama"));
+
+                int id = dataTable.getInt("id_penyewa");
+                String nama = dataTable.getString("nama");
+                String telepon = dataTable.getString("telepon");
+                String email = dataTable.getString("email");
+                String alamat = dataTable.getString("alamat");
                 
-            tableModel.addRow(new Object[] {id, nama, telepon, email, alamat});
+                tableModel.addRow(new Object[] {id, nama, telepon, email, alamat});
             }
         }  
         catch(Exception e) {
