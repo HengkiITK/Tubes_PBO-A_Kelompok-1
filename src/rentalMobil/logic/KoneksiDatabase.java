@@ -2,6 +2,9 @@
 package rentalMobil.logic;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
         
 public class KoneksiDatabase {
     private Connection connect;
@@ -9,6 +12,7 @@ public class KoneksiDatabase {
     private String url;
     private String userName;
     private String password; 
+    private ResultSet result;
     
     
     public KoneksiDatabase() {
@@ -19,7 +23,18 @@ public class KoneksiDatabase {
         password = "";
       
     }
-    
+    public ResultSet querry_selectAll(String table){
+        try {
+            Statement stm = koneksi_database().createStatement();
+            result = stm.executeQuery("SELECT * FROM " + table);
+//            result.next();
+        }  
+        catch(Exception e) {
+            e.printStackTrace();
+        }
+        
+        return result;
+    }
     
     
     

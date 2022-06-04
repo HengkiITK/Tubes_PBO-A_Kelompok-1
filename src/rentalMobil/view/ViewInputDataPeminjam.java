@@ -3,8 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package rentalMobil.view;
+import java.sql.ResultSet;
 import javax.swing.table.DefaultTableModel;
-import rentalMobil.logic.TablePeminjam ;
+import rentalMobil.logic.*;
+
 
 /**
  *
@@ -12,11 +14,13 @@ import rentalMobil.logic.TablePeminjam ;
  */
 public class ViewInputDataPeminjam extends javax.swing.JFrame{
     private TablePeminjam TablePeminjam;
+    private KoneksiDatabase KoneksiDatabase;
     /**
    
      */
     public ViewInputDataPeminjam() {
         TablePeminjam = new TablePeminjam();
+        KoneksiDatabase = new KoneksiDatabase();
         initComponents();
     }
 
@@ -348,11 +352,29 @@ public class ViewInputDataPeminjam extends javax.swing.JFrame{
     }//GEN-LAST:event_TextFieldEmailActionPerformed
     
     
-    public void get_addDataTable() {
-        
+    public void get_table() {
+
+        TablePeminjam.load_table(tableDataPeminjam);
         DefaultTableModel tableModel = (DefaultTableModel) tableDataPeminjam.getModel();
-        
-        
+        try{   
+            ResultSet dataTable = KoneksiDatabase.querry_selectAll("datapeminjam");
+
+            tableModel.setRowCount(0);
+            while(dataTable.next()) {
+                System.out.print(dataTable.getString("nama"));
+
+                int id = dataTable.getInt("id_penyewa");
+                String nama = dataTable.getString("nama");
+                String telepon = dataTable.getString("telepon");
+                String email = dataTable.getString("email");
+                String alamat = dataTable.getString("alamat");
+
+                tableModel.addRow(new Object[] {id, nama, telepon, email, alamat});
+            }
+        }  
+        catch(Exception e) {
+            e.printStackTrace();
+        }
     }
     /**
      * @param args the command line arguments
@@ -386,10 +408,11 @@ public class ViewInputDataPeminjam extends javax.swing.JFrame{
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ViewInputDataPeminjam().setVisible(true);
+                    new ViewInputDataPeminjam().get_table();
+
             }
         });
-      
-        TablePeminjam.load_table(tableDataPeminjam);
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
