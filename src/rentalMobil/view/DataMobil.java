@@ -1,4 +1,4 @@
-package rentalMobil;
+package rentalMobil.view;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
