@@ -4,10 +4,6 @@
  */
 package rentalMobil.logic;
 
-/**
- *
- * @author user
- */
 public class login {
     public int id_user;
     public String username;
@@ -25,8 +21,7 @@ public class login {
         return id_user;
         
     }
-    
-    public String 
+     
     
     
 }

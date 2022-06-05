@@ -17,8 +17,8 @@ public class TablePeminjam extends KoneksiDatabase{
 
     
     void TablePeminjam (Connection conn, ResultSet result, Statement stm, 
-            int id_peminjam, String nama, String alamat, String telepon, String email) {
-        
+         int id_peminjam, String nama, String alamat, String telepon, String email) {
+     
         this.id_peminjam = id_peminjam;
         this.nama = nama;
         this.alamat = alamat;
@@ -27,9 +27,6 @@ public class TablePeminjam extends KoneksiDatabase{
     }
                                        
     public void load_table(javax.swing.JTable tableDataPem) {
-        
-
-        
         try {
             DefaultTableModel tableModel = (DefaultTableModel) tableDataPem.getModel();
             
@@ -46,8 +43,8 @@ public class TablePeminjam extends KoneksiDatabase{
                 
                 tableModel.addRow(new Object[] {id, nama, telepon, email, alamat});
             }
-            
         }  
+        
         catch(Exception e) {
             e.printStackTrace();
         }

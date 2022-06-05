@@ -16,27 +16,11 @@ public class KoneksiDatabase {
     
     
     public KoneksiDatabase() {
-        
         driverName = "com.mysql.cj.jdbc.Driver";
         url = "jdbc:mysql://localhost:3306/rentalmobil";
         userName = "root";
         password = "";
-      
     }
-    
-    public ResultSet querry_selectAll(String table){
-        try {
-            Statement stm = koneksi_database().createStatement();
-            result = stm.executeQuery("SELECT * FROM " + table);
-        }  
-        catch(Exception e) {
-            e.printStackTrace();
-        }
-        
-        return result;
-    }
-    
-    
     
     public Connection koneksi_database() {
         if(connect == null) {
@@ -51,4 +35,33 @@ public class KoneksiDatabase {
         }
         return connect;       
     }
+    
+    
+    public ResultSet querry_selectAll(String table){
+        try {
+            Statement stm = koneksi_database().createStatement();
+            result = stm.executeQuery("SELECT * FROM " + table);
+        }  
+        catch(Exception e) {
+            e.printStackTrace();
+        }
+        
+        return result;
+    }
+    
+    public ResultSet querry_insert() {
+        try {
+            Statement stm = koneksi_database().createStatement();
+            result = stm.executeQuery("INSERT INTO datapengguna value()");
+            
+        }
+        
+        catch(Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+    
+    
+    
 }
