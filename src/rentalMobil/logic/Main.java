@@ -17,10 +17,8 @@ public class Main {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ViewInputDataPeminjam().setVisible(true);
-                new ViewInputDataPeminjam().get_table();
+                new ViewInputDataPeminjam();
             }
         });
     }
-    
-    
 }

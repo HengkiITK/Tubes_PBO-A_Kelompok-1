@@ -26,13 +26,12 @@ public class TablePeminjam extends KoneksiDatabase{
         this.email = email;
     }
                                        
-    public void load_table(javax.swing.JTable tableDataPeminjam) {
+    public void load_table(javax.swing.JTable tableDataPem) {
         
 
         
         try {
-            DefaultTableModel tableModel = (DefaultTableModel) tableDataPeminjam.getModel();
-            System.out.println(tableModel);
+            DefaultTableModel tableModel = (DefaultTableModel) tableDataPem.getModel();
             
             ResultSet dataTable = querry_selectAll("datapeminjam");
             

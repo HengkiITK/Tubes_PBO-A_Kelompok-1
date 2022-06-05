@@ -4,7 +4,12 @@
  */
 package rentalMobil.view;
 
+import java.sql.ResultSet;
+import javax.swing.table.DefaultTableModel;
 import rentalMobil.logic.*;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.sql.Connection;
 
 
 /**
@@ -13,13 +18,18 @@ import rentalMobil.logic.*;
  */
 public class ViewInputDataPeminjam extends javax.swing.JFrame{
     public TablePeminjam TablePeminjam;
+    public KoneksiDatabase Koneksidatabase;
+    
 
     /**
    
      */
     public ViewInputDataPeminjam() {
         TablePeminjam = new TablePeminjam();
+        Koneksidatabase = new KoneksiDatabase();
         initComponents();
+        TablePeminjam.load_table(tableDataPeminjam);
+       
     }
 
     /**
@@ -349,10 +359,9 @@ public class ViewInputDataPeminjam extends javax.swing.JFrame{
         // TODO add your handling code here:
     }//GEN-LAST:event_TextFieldEmailActionPerformed
     
+   
     
-    public void get_table() {
-        TablePeminjam.load_table(tableDataPeminjam);
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFormattedTextField FormattedTextFieldTelepon;
