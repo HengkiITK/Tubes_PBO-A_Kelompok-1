@@ -23,11 +23,11 @@ public class KoneksiDatabase {
         password = "";
       
     }
+    
     public ResultSet querry_selectAll(String table){
         try {
             Statement stm = koneksi_database().createStatement();
             result = stm.executeQuery("SELECT * FROM " + table);
-//            result.next();
         }  
         catch(Exception e) {
             e.printStackTrace();

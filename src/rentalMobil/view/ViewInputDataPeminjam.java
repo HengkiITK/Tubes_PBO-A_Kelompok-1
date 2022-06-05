@@ -3,9 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package rentalMobil.view;
+
 import java.sql.ResultSet;
 import javax.swing.table.DefaultTableModel;
 import rentalMobil.logic.*;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.sql.Connection;
 
 
 /**
@@ -13,15 +17,19 @@ import rentalMobil.logic.*;
  * @author ASUS-TUF
  */
 public class ViewInputDataPeminjam extends javax.swing.JFrame{
-    private TablePeminjam TablePeminjam;
-    private KoneksiDatabase KoneksiDatabase;
+    public TablePeminjam TablePeminjam;
+    public KoneksiDatabase Koneksidatabase;
+    
+
     /**
    
      */
     public ViewInputDataPeminjam() {
         TablePeminjam = new TablePeminjam();
-        KoneksiDatabase = new KoneksiDatabase();
+        Koneksidatabase = new KoneksiDatabase();
         initComponents();
+        TablePeminjam.load_table(tableDataPeminjam);
+       
     }
 
     /**
@@ -205,7 +213,7 @@ public class ViewInputDataPeminjam extends javax.swing.JFrame{
         buttonDeleted1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         FormattedTextFieldTelepon.setBackground(new java.awt.Color(233, 239, 192));
-        FormattedTextFieldTelepon.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("+62"))));
+        FormattedTextFieldTelepon.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat(""))));
         FormattedTextFieldTelepon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FormattedTextFieldTeleponActionPerformed(evt);
@@ -351,69 +359,9 @@ public class ViewInputDataPeminjam extends javax.swing.JFrame{
         // TODO add your handling code here:
     }//GEN-LAST:event_TextFieldEmailActionPerformed
     
+   
     
-    public void get_table() {
-
-        TablePeminjam.load_table(tableDataPeminjam);
-        DefaultTableModel tableModel = (DefaultTableModel) tableDataPeminjam.getModel();
-        try{   
-            ResultSet dataTable = KoneksiDatabase.querry_selectAll("datapeminjam");
-
-            tableModel.setRowCount(0);
-            while(dataTable.next()) {
-                System.out.print(dataTable.getString("nama"));
-
-                int id = dataTable.getInt("id_penyewa");
-                String nama = dataTable.getString("nama");
-                String telepon = dataTable.getString("telepon");
-                String email = dataTable.getString("email");
-                String alamat = dataTable.getString("alamat");
-
-                tableModel.addRow(new Object[] {id, nama, telepon, email, alamat});
-            }
-        }  
-        catch(Exception e) {
-            e.printStackTrace();
-        }
-    }
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewInputDataPeminjam.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewInputDataPeminjam.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewInputDataPeminjam.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewInputDataPeminjam.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ViewInputDataPeminjam().setVisible(true);
-                    new ViewInputDataPeminjam().get_table();
-
-            }
-        });
-        
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFormattedTextField FormattedTextFieldTelepon;

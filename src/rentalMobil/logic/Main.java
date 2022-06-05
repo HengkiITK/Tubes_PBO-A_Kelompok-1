@@ -1,4 +1,5 @@
 package rentalMobil.logic;
+import rentalMobil.view.ViewInputDataPeminjam;
 
 public class Main {
     public static void main(String args[]) {
@@ -15,10 +16,9 @@ public class Main {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TablePeminjam().setVisible(true);
+                new ViewInputDataPeminjam().setVisible(true);
+                new ViewInputDataPeminjam();
             }
         });
     }
-    
-    
 }
