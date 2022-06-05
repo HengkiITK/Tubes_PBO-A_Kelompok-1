@@ -21,6 +21,7 @@ public class login {
     }
 
     public int  get_Text() {
+        
         return id_user;
         
     }
