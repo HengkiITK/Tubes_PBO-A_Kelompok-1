@@ -7,8 +7,6 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.sql.PreparedStatement;
 
-
-
         
 public class KoneksiDatabase {
     private Connection connect;
@@ -45,6 +43,18 @@ public class KoneksiDatabase {
         try {
             Statement stm = koneksi_database().createStatement();
             result = stm.executeQuery("SELECT * FROM " + table);
+        }  
+        catch(Exception e) {
+            e.printStackTrace();
+        }
+        
+        return result;
+    }
+    
+    public ResultSet querry_select(String table, String where, String value){
+        try {
+            Statement stm = koneksi_database().createStatement();
+            result = stm.executeQuery("SELECT * FROM " + table + " WHERE " + where + " = " + value);
         }  
         catch(Exception e) {
             e.printStackTrace();

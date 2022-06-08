@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.table.DefaultTableModel;
 
-public class TablePeminjam extends KoneksiDatabase{
+abstract class form_transaksi extends KoneksiDatabase{
   
     private int id_peminjam;
     private String nama;
@@ -12,6 +12,8 @@ public class TablePeminjam extends KoneksiDatabase{
     private String telepon;
     private String email;
     private String a,b,c,d;
+    
+    public abstract void run();
     
     void TablePeminjam (ResultSet result, Statement stm, 
          int id_peminjam, String nama, String alamat, String telepon, String email) {
@@ -46,8 +48,6 @@ public class TablePeminjam extends KoneksiDatabase{
             e.printStackTrace();
         }
     }
-    
-   
     
     public void add_peminjam(
             String nama,

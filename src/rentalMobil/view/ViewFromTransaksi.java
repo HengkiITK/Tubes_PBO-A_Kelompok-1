@@ -10,11 +10,11 @@ import rentalMobil.logic.*;
  *
  * @author ASUS-TUF
  */
-public class ViewInputDataPeminjam extends javax.swing.JFrame{
-    public  TablePeminjam TablePeminjam;
+public class ViewFromTransaksi extends javax.swing.JFrame{
+    public  form_peminjaman TablePeminjam;
     
-    public ViewInputDataPeminjam() {
-        TablePeminjam = new TablePeminjam();        
+    public ViewFromTransaksi() {
+        TablePeminjam = new form_peminjaman();        
         initComponents();
         TablePeminjam.load_table(tableDataPeminjam);
         
@@ -246,7 +246,7 @@ public class ViewInputDataPeminjam extends javax.swing.JFrame{
                     .addComponent(buttonSearch1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textFieldSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(interfacePeminjamLayout.createSequentialGroup()
                         .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(labelNama, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -266,8 +266,7 @@ public class ViewInputDataPeminjam extends javax.swing.JFrame{
                         .addGap(61, 61, 61)
                         .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(buttonInput, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(buttonDeleted1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(buttonDeleted1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(90, Short.MAX_VALUE))
         );
