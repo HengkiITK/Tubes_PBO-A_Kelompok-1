@@ -8,12 +8,12 @@ package rentalMobil.view;
  *
  * @author HP
  */
-public class about extends javax.swing.JFrame {
+public class menu extends javax.swing.JFrame {
 
     /**
      * Creates new form about
      */
-    public about() {
+    public menu() {
         initComponents();
     }
 
@@ -92,8 +92,6 @@ public class about extends javax.swing.JFrame {
                 .addContainerGap(227, Short.MAX_VALUE))
         );
 
-        jButton1.getAccessibleContext().setAccessibleName("Data Mobil");
-
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 980, 500);
 
@@ -125,20 +123,21 @@ public class about extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(about.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(about.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(about.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(about.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new about().setVisible(true);
+                new menu().setVisible(true);
             }
         });
     }
