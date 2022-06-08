@@ -62,7 +62,7 @@ public class ViewInputDataPeminjam extends javax.swing.JFrame{
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        interfacePeminjam.setBackground(new java.awt.Color(255, 246, 218));
+        interfacePeminjam.setBackground(new java.awt.Color(250, 242, 233));
         interfacePeminjam.setMaximumSize(new java.awt.Dimension(2000, 2000));
 
         labelTelepon.setFont(new java.awt.Font("FZYaoTi", 0, 18)); // NOI18N
@@ -278,7 +278,6 @@ public class ViewInputDataPeminjam extends javax.swing.JFrame{
             .addGroup(interfacePeminjamLayout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addComponent(buttonSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 188, Short.MAX_VALUE)
                 .addGap(100, 100, 100)
                 .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonDeleted, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
