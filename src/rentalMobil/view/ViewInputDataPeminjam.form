@@ -41,6 +41,9 @@
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="da" green="f6" red="ff" type="rgb"/>
         </Property>
+        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[2000, 2000]"/>
+        </Property>
       </Properties>
 
       <Layout>
@@ -113,7 +116,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                   <Component id="buttonSearch" min="-2" pref="30" max="-2" attributes="0"/>
-                  <EmptySpace pref="93" max="32767" attributes="0"/>
+                  <EmptySpace pref="188" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="buttonDeleted" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                       <Component id="buttonSearch1" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
