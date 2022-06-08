@@ -1,19 +1,21 @@
 
 package rentalMobil.logic;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.sql.PreparedStatement;
+
+
 
         
 public class KoneksiDatabase {
     private Connection connect;
-    private String driverName; 
-    private String url;
+    private String url, password, driverName, query;
     private String userName;
-    private String password; 
     private ResultSet result;
-    
+    public PreparedStatement pst;
     
     public KoneksiDatabase() {
         driverName = "com.mysql.cj.jdbc.Driver";
@@ -21,6 +23,8 @@ public class KoneksiDatabase {
         userName = "root";
         password = "";
     }
+    
+ 
     
     public Connection koneksi_database() {
         if(connect == null) {
@@ -49,19 +53,28 @@ public class KoneksiDatabase {
         return result;
     }
     
-    public ResultSet querry_insert() {
+    public void querry_insert(String tabel, String nama, String telepon, String email,String alamat) {
         try {
-            Statement stm = koneksi_database().createStatement();
-            result = stm.executeQuery("INSERT INTO datapengguna value()");
+            query = ("INSERT INTO " 
+                    + tabel
+                    + "(nama, "
+                    + "alamat, "
+                    + "telepon, "
+                    + "email) "
+                    + "values"
+                    + " ('"+nama+"',"
+                    + " '"+alamat+"',"
+                    + " '"+telepon+"',"
+                    + " '"+email+"') ");
             
+            pst = koneksi_database().prepareStatement(query);
+            pst.execute();
+            
+          
         }
-        
         catch(Exception e) {
             e.printStackTrace();
         }
-        return result;
     }
-    
-    
-    
+   
 }
