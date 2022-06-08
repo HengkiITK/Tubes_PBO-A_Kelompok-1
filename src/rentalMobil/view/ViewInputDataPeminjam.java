@@ -12,15 +12,10 @@ import rentalMobil.logic.*;
  */
 public class ViewInputDataPeminjam extends javax.swing.JFrame{
     public  TablePeminjam TablePeminjam;
-    public KoneksiDatabase KoneksiDatabase;
-
     
     public ViewInputDataPeminjam() {
-        TablePeminjam = new TablePeminjam();
-        KoneksiDatabase = new KoneksiDatabase();
-        
+        TablePeminjam = new TablePeminjam();        
         initComponents();
-        
         TablePeminjam.load_table(tableDataPeminjam);
         
     }
