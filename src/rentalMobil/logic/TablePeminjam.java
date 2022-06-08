@@ -1,11 +1,8 @@
 package rentalMobil.logic;
 
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.table.DefaultTableModel;
-
-
 
 public class TablePeminjam extends KoneksiDatabase{
   
@@ -14,11 +11,11 @@ public class TablePeminjam extends KoneksiDatabase{
     private String alamat;
     private String telepon;
     private String email;
-
+    private String a,b,c,d;
     
-    void TablePeminjam (Connection conn, ResultSet result, Statement stm, 
-            int id_peminjam, String nama, String alamat, String telepon, String email) {
-        
+    void TablePeminjam (ResultSet result, Statement stm, 
+         int id_peminjam, String nama, String alamat, String telepon, String email) {
+     
         this.id_peminjam = id_peminjam;
         this.nama = nama;
         this.alamat = alamat;
@@ -26,12 +23,9 @@ public class TablePeminjam extends KoneksiDatabase{
         this.email = email;
     }
                                        
-    public void load_table(javax.swing.JTable tableDataPem) {
-        
-
-        
+    public void load_table(javax.swing.JTable tableDataPeminjam) {
         try {
-            DefaultTableModel tableModel = (DefaultTableModel) tableDataPem.getModel();
+            DefaultTableModel tableModel = (DefaultTableModel) tableDataPeminjam.getModel();
             
             ResultSet dataTable = querry_selectAll("datapeminjam");
             
@@ -46,11 +40,24 @@ public class TablePeminjam extends KoneksiDatabase{
                 
                 tableModel.addRow(new Object[] {id, nama, telepon, email, alamat});
             }
-            
         }  
+        
         catch(Exception e) {
             e.printStackTrace();
         }
     }
-
+    
+   
+    
+    public void add_peminjam(
+            String nama,
+            String telepon,
+            String email,
+            String alamat) {
+        
+        querry_insert("datapeminjam", nama, alamat, telepon, email);
+    }
+    
+    
 }
+   

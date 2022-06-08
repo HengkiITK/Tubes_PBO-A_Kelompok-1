@@ -4,32 +4,28 @@
  */
 package rentalMobil.view;
 
-import java.sql.ResultSet;
-import javax.swing.table.DefaultTableModel;
 import rentalMobil.logic.*;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.sql.Connection;
-
 
 /**
  *
  * @author ASUS-TUF
  */
 public class ViewInputDataPeminjam extends javax.swing.JFrame{
-    public TablePeminjam TablePeminjam;
-    
+    public  TablePeminjam TablePeminjam;
+    public KoneksiDatabase KoneksiDatabase;
 
-    /**
-   
-     */
+    
     public ViewInputDataPeminjam() {
         TablePeminjam = new TablePeminjam();
+        KoneksiDatabase = new KoneksiDatabase();
+        
         initComponents();
+        
         TablePeminjam.load_table(tableDataPeminjam);
-       
+        
     }
-
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -41,7 +37,6 @@ public class ViewInputDataPeminjam extends javax.swing.JFrame{
 
         interfacePeminjam = new javax.swing.JPanel();
         labelTelepon = new javax.swing.JLabel();
-        labelId = new javax.swing.JLabel();
         labelNama = new javax.swing.JLabel();
         TextFieldEmail = new javax.swing.JTextField();
         labelEmail = new javax.swing.JLabel();
@@ -56,22 +51,16 @@ public class ViewInputDataPeminjam extends javax.swing.JFrame{
         buttonDeleted = new javax.swing.JButton();
         buttonInput = new javax.swing.JButton();
         buttonSearch1 = new javax.swing.JButton();
-        formattedTextFieldId = new javax.swing.JFormattedTextField();
         buttonDeleted1 = new javax.swing.JButton();
-        FormattedTextFieldTelepon = new javax.swing.JFormattedTextField();
+        textFieldTelepon = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         interfacePeminjam.setBackground(new java.awt.Color(255, 246, 218));
-        interfacePeminjam.setMaximumSize(new java.awt.Dimension(2000, 2000));
 
         labelTelepon.setFont(new java.awt.Font("FZYaoTi", 0, 18)); // NOI18N
         labelTelepon.setForeground(new java.awt.Color(185, 22, 78));
         labelTelepon.setText("Telepon");
-
-        labelId.setFont(new java.awt.Font("FZYaoTi", 0, 18)); // NOI18N
-        labelId.setForeground(new java.awt.Color(185, 22, 78));
-        labelId.setText("ID");
 
         labelNama.setFont(new java.awt.Font("FZYaoTi", 0, 18)); // NOI18N
         labelNama.setForeground(new java.awt.Color(215, 22, 51));
@@ -147,7 +136,7 @@ public class ViewInputDataPeminjam extends javax.swing.JFrame{
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -198,24 +187,15 @@ public class ViewInputDataPeminjam extends javax.swing.JFrame{
             }
         });
 
-        formattedTextFieldId.setBackground(new java.awt.Color(233, 239, 192));
-        formattedTextFieldId.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
-        formattedTextFieldId.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                formattedTextFieldIdActionPerformed(evt);
-            }
-        });
-
         buttonDeleted1.setBackground(new java.awt.Color(255, 119, 119));
         buttonDeleted1.setFont(new java.awt.Font("FZYaoTi", 1, 14)); // NOI18N
         buttonDeleted1.setText("CLEAR");
         buttonDeleted1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        FormattedTextFieldTelepon.setBackground(new java.awt.Color(233, 239, 192));
-        FormattedTextFieldTelepon.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat(""))));
-        FormattedTextFieldTelepon.addActionListener(new java.awt.event.ActionListener() {
+        textFieldTelepon.setBackground(new java.awt.Color(233, 239, 192));
+        textFieldTelepon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FormattedTextFieldTeleponActionPerformed(evt);
+                textFieldTeleponActionPerformed(evt);
             }
         });
 
@@ -226,60 +206,46 @@ public class ViewInputDataPeminjam extends javax.swing.JFrame{
             .addGroup(interfacePeminjamLayout.createSequentialGroup()
                 .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(interfacePeminjamLayout.createSequentialGroup()
-                        .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(35, 35, 35)
+                        .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(buttonSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(interfacePeminjamLayout.createSequentialGroup()
-                                .addGap(35, 35, 35)
-                                .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(interfacePeminjamLayout.createSequentialGroup()
-                                        .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(interfacePeminjamLayout.createSequentialGroup()
-                                                .addComponent(labelId)
-                                                .addGap(67, 67, 67))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, interfacePeminjamLayout.createSequentialGroup()
-                                                .addComponent(labelNama, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(18, 18, 18)))
-                                        .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(formattedTextFieldId, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(textFieldNama)))
-                                    .addGroup(interfacePeminjamLayout.createSequentialGroup()
-                                        .addComponent(labelEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(TextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(interfacePeminjamLayout.createSequentialGroup()
-                                        .addComponent(labelAlamat, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(interfacePeminjamLayout.createSequentialGroup()
-                                        .addComponent(labelTelepon, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(FormattedTextFieldTelepon, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(18, 18, 18))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, interfacePeminjamLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(buttonInput, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(labelAlamat, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(buttonDeleted1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(60, 60, 60)))
-                        .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, interfacePeminjamLayout.createSequentialGroup()
-                                .addComponent(textFieldSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(buttonSearch1)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(interfacePeminjamLayout.createSequentialGroup()
+                                .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelNama, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelTelepon, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(buttonDeleted))
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 755, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(interfacePeminjamLayout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(buttonSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(TextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(textFieldTelepon, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(textFieldNama))))
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, interfacePeminjamLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(buttonInput, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(buttonDeleted1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(60, 60, 60)))
+                .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, interfacePeminjamLayout.createSequentialGroup()
+                        .addComponent(textFieldSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(buttonSearch1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonDeleted))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 755, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(53, Short.MAX_VALUE))
         );
         interfacePeminjamLayout.setVerticalGroup(
             interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(interfacePeminjamLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(33, 33, 33)
                 .addComponent(buttonSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 188, Short.MAX_VALUE)
-                .addGap(100, 100, 100)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
                 .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonDeleted, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(buttonSearch1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -290,13 +256,9 @@ public class ViewInputDataPeminjam extends javax.swing.JFrame{
                         .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(labelNama, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(textFieldNama, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(labelId, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(formattedTextFieldId))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(FormattedTextFieldTelepon, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(textFieldTelepon, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(labelTelepon, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -306,11 +268,11 @@ public class ViewInputDataPeminjam extends javax.swing.JFrame{
                         .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(labelAlamat))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(61, 61, 61)
                         .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(buttonDeleted1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(buttonInput, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(45, 45, 45))
+                            .addComponent(buttonInput, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonDeleted1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(90, Short.MAX_VALUE))
         );
@@ -332,7 +294,7 @@ public class ViewInputDataPeminjam extends javax.swing.JFrame{
     }// </editor-fold>//GEN-END:initComponents
 
     private void textFieldNamaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldNamaActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_textFieldNamaActionPerformed
 
     private void textFieldSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldSearchActionPerformed
@@ -344,49 +306,55 @@ public class ViewInputDataPeminjam extends javax.swing.JFrame{
     }//GEN-LAST:event_buttonSearchActionPerformed
 
     private void buttonInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonInputActionPerformed
-        // TODO add your handling code here:
+        try {
+            TablePeminjam.add_peminjam(
+                textFieldNama.getText(), 
+                textFieldTelepon.getText(),
+                TextFieldEmail.getText(),
+                textFieldAlamat.getText()); 
+            
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+       TablePeminjam.load_table(tableDataPeminjam);
+    
+        
     }//GEN-LAST:event_buttonInputActionPerformed
 
     private void buttonSearch1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSearch1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_buttonSearch1ActionPerformed
 
-    private void formattedTextFieldIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_formattedTextFieldIdActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_formattedTextFieldIdActionPerformed
-
-    private void FormattedTextFieldTeleponActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FormattedTextFieldTeleponActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FormattedTextFieldTeleponActionPerformed
-
     private void TextFieldEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldEmailActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TextFieldEmailActionPerformed
-    
-   
-    
+
+    private void textFieldTeleponActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldTeleponActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldTeleponActionPerformed
     
 
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JFormattedTextField FormattedTextFieldTelepon;
     private javax.swing.JTextField TextFieldEmail;
     private javax.swing.JButton buttonDeleted;
     private javax.swing.JButton buttonDeleted1;
     private javax.swing.JButton buttonInput;
     private javax.swing.JButton buttonSearch;
     private javax.swing.JButton buttonSearch1;
-    private javax.swing.JFormattedTextField formattedTextFieldId;
     private javax.swing.JPanel interfacePeminjam;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel labelAlamat;
     private javax.swing.JLabel labelEmail;
-    private javax.swing.JLabel labelId;
     private javax.swing.JLabel labelNama;
     private javax.swing.JLabel labelTelepon;
     private javax.swing.JTable tableDataPeminjam;
     private javax.swing.JTextArea textFieldAlamat;
     private javax.swing.JTextField textFieldNama;
     private javax.swing.JTextField textFieldSearch;
+    private javax.swing.JTextField textFieldTelepon;
     // End of variables declaration//GEN-END:variables
 }
