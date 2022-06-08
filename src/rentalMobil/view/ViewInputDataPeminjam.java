@@ -18,7 +18,6 @@ import java.sql.Connection;
  */
 public class ViewInputDataPeminjam extends javax.swing.JFrame{
     public TablePeminjam TablePeminjam;
-    public KoneksiDatabase Koneksidatabase;
     
 
     /**
@@ -26,7 +25,6 @@ public class ViewInputDataPeminjam extends javax.swing.JFrame{
      */
     public ViewInputDataPeminjam() {
         TablePeminjam = new TablePeminjam();
-        Koneksidatabase = new KoneksiDatabase();
         initComponents();
         TablePeminjam.load_table(tableDataPeminjam);
        
