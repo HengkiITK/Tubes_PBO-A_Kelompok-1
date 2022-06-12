@@ -54,6 +54,7 @@ public class KoneksiDatabase {
     public ResultSet querry_select(String table, String where, String value){
         try {
             Statement stm = koneksi_database().createStatement();
+            
             result = stm.executeQuery("SELECT * FROM " + table + " WHERE " + where + " = " + value);
         }  
         catch(Exception e) {
@@ -63,7 +64,7 @@ public class KoneksiDatabase {
         return result;
     }
     
-    public void querry_insert(String tabel, String nama, String telepon, String email,String alamat) {
+    public void querry_insert(String tabel, String nama, String telepon, String email, String alamat) {
         try {
             query = ("INSERT INTO " 
                     + tabel

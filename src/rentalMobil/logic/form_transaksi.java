@@ -29,18 +29,18 @@ abstract class form_transaksi extends KoneksiDatabase{
         try {
             DefaultTableModel tableModel = (DefaultTableModel) tableDataPeminjam.getModel();
             
-            ResultSet dataTable = querry_selectAll("datapeminjam");
+            ResultSet dataTable = querry_selectAll("datamobil");
             
             tableModel.setRowCount(0);
             
             while(dataTable.next()) {
-                int id = dataTable.getInt("id_penyewa");
-                String nama = dataTable.getString("nama");
-                String telepon = dataTable.getString("telepon");
-                String email = dataTable.getString("email");
-                String alamat = dataTable.getString("alamat");
+                String merk = dataTable.getString("merk");
+                int id = dataTable.getInt("id_mobil");
+                String  tahun = dataTable.getString("tahun");
+                String noPolisi = dataTable.getString("no_pol");
+                String harga = dataTable.getString("harga");
                 
-                tableModel.addRow(new Object[] {id, nama, telepon, email, alamat});
+                tableModel.addRow(new Object[] { id, merk, tahun, noPolisi, harga});
             }
         }  
         
