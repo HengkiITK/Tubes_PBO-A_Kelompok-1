@@ -20,25 +20,6 @@ public class ViewFromTransaksi extends javax.swing.JFrame{
         
     }
     
-//    public static void main(String args[]) {
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new ViewFromTransaksi().setVisible(true);
-//            }
-//        });
-//    }
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -418,7 +399,6 @@ public class ViewFromTransaksi extends javax.swing.JFrame{
         this.setVisible(false);
     }//GEN-LAST:event_backMouseClicked
     
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField TextFieldEmail1;
