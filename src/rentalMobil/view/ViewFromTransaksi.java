@@ -40,10 +40,8 @@ public class ViewFromTransaksi extends javax.swing.JFrame{
         textFieldAlamat = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
         tableDataPeminjam = new javax.swing.JTable();
-        textFieldSearch = new javax.swing.JTextField();
         back = new javax.swing.JButton();
         btnpinjam = new javax.swing.JButton();
-        buttonSearch1 = new javax.swing.JButton();
         textFieldTelepon = new javax.swing.JTextField();
         labelAlamat1 = new javax.swing.JLabel();
         TextFieldEmail1 = new javax.swing.JTextField();
@@ -51,10 +49,11 @@ public class ViewFromTransaksi extends javax.swing.JFrame{
         labelAlamat3 = new javax.swing.JLabel();
         duration = new javax.swing.JTextField();
         date = new javax.swing.JTextField();
+        labelAlamat4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        interfacePeminjam.setBackground(new java.awt.Color(255, 246, 218));
+        interfacePeminjam.setBackground(new java.awt.Color(250, 242, 233));
 
         labelTelepon.setFont(new java.awt.Font("FZYaoTi", 0, 18)); // NOI18N
         labelTelepon.setForeground(new java.awt.Color(185, 22, 78));
@@ -96,6 +95,7 @@ public class ViewFromTransaksi extends javax.swing.JFrame{
         jScrollPane1.setViewportView(textFieldAlamat);
 
         tableDataPeminjam.setBackground(new java.awt.Color(194, 222, 209));
+        tableDataPeminjam.setForeground(new java.awt.Color(153, 255, 153));
         tableDataPeminjam.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -144,13 +144,6 @@ public class ViewFromTransaksi extends javax.swing.JFrame{
         tableDataPeminjam.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_LAST_COLUMN);
         jScrollPane2.setViewportView(tableDataPeminjam);
 
-        textFieldSearch.setBackground(new java.awt.Color(233, 239, 192));
-        textFieldSearch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textFieldSearchActionPerformed(evt);
-            }
-        });
-
         back.setBackground(new java.awt.Color(246, 182, 133));
         back.setFont(new java.awt.Font("FZYaoTi", 1, 14)); // NOI18N
         back.setText("BACK");
@@ -172,16 +165,6 @@ public class ViewFromTransaksi extends javax.swing.JFrame{
         btnpinjam.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnpinjamActionPerformed(evt);
-            }
-        });
-
-        buttonSearch1.setBackground(new java.awt.Color(244, 191, 191));
-        buttonSearch1.setFont(new java.awt.Font("FZYaoTi", 1, 14)); // NOI18N
-        buttonSearch1.setText("SEARCH");
-        buttonSearch1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        buttonSearch1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonSearch1ActionPerformed(evt);
             }
         });
 
@@ -211,17 +194,23 @@ public class ViewFromTransaksi extends javax.swing.JFrame{
         labelAlamat3.setForeground(new java.awt.Color(185, 22, 78));
         labelAlamat3.setText("Tanggal");
 
+        duration.setBackground(new java.awt.Color(233, 239, 192));
         duration.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 durationActionPerformed(evt);
             }
         });
 
+        date.setBackground(new java.awt.Color(233, 239, 192));
         date.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dateActionPerformed(evt);
             }
         });
+
+        labelAlamat4.setFont(new java.awt.Font("FZYaoTi", 0, 18)); // NOI18N
+        labelAlamat4.setForeground(new java.awt.Color(185, 22, 78));
+        labelAlamat4.setText("Hari");
 
         javax.swing.GroupLayout interfacePeminjamLayout = new javax.swing.GroupLayout(interfacePeminjam);
         interfacePeminjam.setLayout(interfacePeminjamLayout);
@@ -229,13 +218,8 @@ public class ViewFromTransaksi extends javax.swing.JFrame{
             interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(interfacePeminjamLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(interfacePeminjamLayout.createSequentialGroup()
-                        .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(textFieldSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(61, 61, 61)
-                        .addComponent(buttonSearch1))
+                .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(back, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(interfacePeminjamLayout.createSequentialGroup()
                         .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(interfacePeminjamLayout.createSequentialGroup()
@@ -252,17 +236,20 @@ public class ViewFromTransaksi extends javax.swing.JFrame{
                                     .addComponent(jScrollPane1)
                                     .addComponent(textFieldTelepon, javax.swing.GroupLayout.DEFAULT_SIZE, 296, Short.MAX_VALUE)
                                     .addComponent(TextFieldEmail1)))
-                            .addComponent(labelAlamat2)
                             .addGroup(interfacePeminjamLayout.createSequentialGroup()
                                 .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(labelAlamat1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(labelAlamat3))
+                                    .addComponent(labelAlamat3)
+                                    .addComponent(labelAlamat2))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(no_pol, javax.swing.GroupLayout.DEFAULT_SIZE, 296, Short.MAX_VALUE)
-                                    .addComponent(duration)
-                                    .addComponent(date))))
-                        .addGap(58, 58, 58)
+                                    .addComponent(date)
+                                    .addGroup(interfacePeminjamLayout.createSequentialGroup()
+                                        .addComponent(duration, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(labelAlamat4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(71, 71, 71)
                         .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnpinjam, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 755, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -291,10 +278,12 @@ public class ViewFromTransaksi extends javax.swing.JFrame{
                 .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelAlamat1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(no_pol, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
-                .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelAlamat2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(duration, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(labelAlamat2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(duration, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(labelAlamat4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelAlamat3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -302,15 +291,12 @@ public class ViewFromTransaksi extends javax.swing.JFrame{
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(interfacePeminjamLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textFieldSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonSearch1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
+                .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnpinjam, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -332,10 +318,6 @@ public class ViewFromTransaksi extends javax.swing.JFrame{
     private void textFieldNamaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldNamaActionPerformed
        
     }//GEN-LAST:event_textFieldNamaActionPerformed
-
-    private void textFieldSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldSearchActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textFieldSearchActionPerformed
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         // TODO add your handling code here:
@@ -370,10 +352,6 @@ public class ViewFromTransaksi extends javax.swing.JFrame{
        
     }//GEN-LAST:event_btnpinjamActionPerformed
 
-    private void buttonSearch1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSearch1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonSearch1ActionPerformed
-
     private void no_polActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_no_polActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_no_polActionPerformed
@@ -404,7 +382,6 @@ public class ViewFromTransaksi extends javax.swing.JFrame{
     private javax.swing.JTextField TextFieldEmail1;
     private javax.swing.JButton back;
     private javax.swing.JButton btnpinjam;
-    private javax.swing.JButton buttonSearch1;
     private javax.swing.JTextField date;
     private javax.swing.JTextField duration;
     private javax.swing.JPanel interfacePeminjam;
@@ -414,6 +391,7 @@ public class ViewFromTransaksi extends javax.swing.JFrame{
     private javax.swing.JLabel labelAlamat1;
     private javax.swing.JLabel labelAlamat2;
     private javax.swing.JLabel labelAlamat3;
+    private javax.swing.JLabel labelAlamat4;
     private javax.swing.JLabel labelEmail;
     private javax.swing.JLabel labelNama;
     private javax.swing.JLabel labelTelepon;
@@ -421,7 +399,6 @@ public class ViewFromTransaksi extends javax.swing.JFrame{
     private javax.swing.JTable tableDataPeminjam;
     private javax.swing.JTextArea textFieldAlamat;
     private javax.swing.JTextField textFieldNama;
-    private javax.swing.JTextField textFieldSearch;
     private javax.swing.JTextField textFieldTelepon;
     // End of variables declaration//GEN-END:variables
 }
