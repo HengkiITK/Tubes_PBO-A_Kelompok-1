@@ -361,7 +361,7 @@ public class ViewFromTransaksi extends javax.swing.JFrame{
     }//GEN-LAST:event_backActionPerformed
 
     private void btnpinjamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnpinjamActionPerformed
-        try {
+       try {
             TablePeminjam.add_peminjam(
                 textFieldNama.getText(), 
                 textFieldTelepon.getText(),
@@ -377,8 +377,16 @@ public class ViewFromTransaksi extends javax.swing.JFrame{
         }
         
        TablePeminjam.load_table(tableDataPeminjam);
-    
-        
+       
+       textFieldNama.setText("");
+       textFieldTelepon.setText("");
+       textFieldAlamat.setText("");
+       date.setText("");
+       duration.setText("");
+       no_pol.setText("");
+       
+       
+ 
     }//GEN-LAST:event_btnpinjamActionPerformed
 
     private void buttonSearch1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSearch1ActionPerformed

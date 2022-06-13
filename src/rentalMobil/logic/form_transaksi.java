@@ -5,7 +5,7 @@ import java.sql.Statement;
 import javax.swing.table.DefaultTableModel;
 
 abstract class form_transaksi extends KoneksiDatabase{
-  
+   
     private int id_peminjam;
     private String nama;
     private String alamat;
