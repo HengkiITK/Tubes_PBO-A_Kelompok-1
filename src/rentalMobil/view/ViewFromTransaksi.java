@@ -368,7 +368,7 @@ public class ViewFromTransaksi extends javax.swing.JFrame{
                 no_pol.getText(),
                 textFieldAlamat.getText(),
                 no_pol.getText() ,
-                duration.getText(), 
+                date.getText(), 
                 duration.getText()); 
             
         }

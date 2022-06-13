@@ -45,8 +45,6 @@ public class ViewMobil extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         no_pol = new javax.swing.JTextField();
         buttonSearch2 = new javax.swing.JButton();
-        buttonSearch3 = new javax.swing.JButton();
-        buttonSearch4 = new javax.swing.JButton();
         tahun = new javax.swing.JTextField();
         harga = new javax.swing.JTextField();
         merk = new javax.swing.JTextField();
@@ -159,64 +157,42 @@ public class ViewMobil extends javax.swing.JFrame {
             }
         });
 
-        buttonSearch3.setBackground(new java.awt.Color(255, 255, 204));
-        buttonSearch3.setFont(new java.awt.Font("FZYaoTi", 1, 14)); // NOI18N
-        buttonSearch3.setText("EDIT");
-        buttonSearch3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonSearch3ActionPerformed(evt);
-            }
-        });
-
-        buttonSearch4.setBackground(new java.awt.Color(255, 204, 102));
-        buttonSearch4.setFont(new java.awt.Font("FZYaoTi", 1, 14)); // NOI18N
-        buttonSearch4.setText("BATAL");
-        buttonSearch4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonSearch4ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(382, 382, 382)
+                .addComponent(jLabel3)
+                .addGap(0, 489, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(99, 99, 99)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 978, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(buttonSearch1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(buttonSearch2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(buttonSearch4, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(buttonSearch3, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(382, 382, 382)
-                        .addComponent(jLabel3)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(99, 99, 99)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel6))
-                                .addGap(20, 20, 20))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel2)
-                                .addGap(18, 18, 18)))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(harga, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 489, Short.MAX_VALUE)
-                            .addComponent(tahun, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(no_pol, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(merk))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 492, Short.MAX_VALUE)))
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6))
+                        .addGap(20, 20, 20))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(harga, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 489, Short.MAX_VALUE)
+                    .addComponent(tahun, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(no_pol, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(merk))
+                .addContainerGap(522, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(99, 99, 99)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 978, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(buttonSearch1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonSearch2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30))
         );
         jPanel1Layout.setVerticalGroup(
@@ -252,11 +228,7 @@ public class ViewMobil extends javax.swing.JFrame {
                         .addComponent(buttonSearch1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(46, 46, 46)
                         .addComponent(buttonSearch2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(46, 46, 46)
-                        .addComponent(buttonSearch3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(46, 46, 46)
-                        .addComponent(buttonSearch4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(19, 19, 19)))
+                        .addGap(171, 171, 171)))
                 .addContainerGap(85, Short.MAX_VALUE))
         );
 
@@ -278,14 +250,6 @@ public class ViewMobil extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void buttonSearch4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSearch4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonSearch4ActionPerformed
-
-    private void buttonSearch3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSearch3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonSearch3ActionPerformed
 
     private void buttonSearch2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSearch2ActionPerformed
         // TODO add your handling code here:
@@ -355,8 +319,6 @@ public class ViewMobil extends javax.swing.JFrame {
     private javax.swing.JButton back;
     private javax.swing.JButton buttonSearch1;
     private javax.swing.JButton buttonSearch2;
-    private javax.swing.JButton buttonSearch3;
-    private javax.swing.JButton buttonSearch4;
     private javax.swing.JTextField harga;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel2;
