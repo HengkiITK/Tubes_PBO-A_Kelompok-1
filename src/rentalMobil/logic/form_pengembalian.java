@@ -35,9 +35,7 @@ public class form_pengembalian extends KoneksiDatabase {
             
             tableModel.setRowCount(0);
             
-
             while(dataTable.next()) {
-//                System.out.print(dataTable.getString("merk"));
                 int id = dataTable.getInt("id_transaksi");
                 String merk = dataTable.getString("merk");
                 String no_pol = dataTable.getString("nama");
@@ -47,7 +45,6 @@ public class form_pengembalian extends KoneksiDatabase {
                 int lama = dataTable.getInt("lama");
                 String tgl_kembali = dataTable.getString("tgl_kembali");
                 int denda = dataTable.getInt("denda");
-//                System.out.print(id);
                 tableModel.addRow(new Object[] {id, merk, no_pol, peminjam, harga, tgl_pinjam, lama, tgl_kembali, denda});
             }
             
