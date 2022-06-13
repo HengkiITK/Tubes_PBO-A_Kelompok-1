@@ -385,9 +385,8 @@ public class ViewFromTransaksi extends javax.swing.JFrame{
        date.setText("");
        duration.setText("");
        no_pol.setText("");
+       TextFieldEmail1.setText("");
        
-       
- 
     }//GEN-LAST:event_btnpinjamActionPerformed
 
     private void buttonSearch1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSearch1ActionPerformed
