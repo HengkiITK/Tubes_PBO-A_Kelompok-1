@@ -83,17 +83,20 @@ public class form_pengembalian extends KoneksiDatabase {
                 long banyak_denda = 50000 * (diffrence - Integer. parseInt(duration));
                 denda.setText(String.valueOf(banyak_denda));
             } else {
-                denda.setText("");
+                denda.setText("0");
             }
         } catch (ParseException ex) {
             Logger.getLogger(form_pengembalian.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
-    public void pengembalian(String id, String tgl_kembali, String denda){
+    public void pengembalian(String id, String no_pol, String tgl_kembali, String denda){
         String[] column = {"tgl_kembali", "denda"};
         String[] data = {tgl_kembali, denda};
         querry_update("datatransaksi", column, data, "id_transaksi", id);
-
+        
+        String[] columnMobil = {"status"};
+        String[] dataMobil = {"ready"};
+        querry_update("datamobil", columnMobil, dataMobil, "no_pol", no_pol);
     }
 }

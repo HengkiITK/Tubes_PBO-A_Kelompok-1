@@ -61,7 +61,7 @@ public class ViewMenu extends javax.swing.JFrame {
             }
         });
 
-        sewa.setText("SEWA");
+        sewa.setText("Sewa");
         sewa.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 sewaMouseClicked(evt);
