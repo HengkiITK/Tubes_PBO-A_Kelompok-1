@@ -49,7 +49,7 @@ abstract class form_transaksi extends KoneksiDatabase{
         }
     }
     
-    public void add_peminjam(String nama, String telepon, String email, String alamat, String no_pol, String duration, String date) {
+    public void add_peminjam(String nama, String telepon, String email, String alamat, String no_pol, String date, String duration) {
         try {
             String[] column = {"nama", "telepon", "email", "alamat"};
             String[] data = {nama, telepon, email, alamat};
