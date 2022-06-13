@@ -52,6 +52,4 @@ public class DataMobil extends KoneksiDatabase{
     public void delete_mobil(String no_pol){
         querry_delete("datamobil", "no_pol", no_pol);
     }
-    
-
 }
