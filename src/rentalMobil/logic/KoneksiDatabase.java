@@ -10,8 +10,7 @@ import java.sql.PreparedStatement;
         
 public class KoneksiDatabase {
     private Connection connect;
-    private String url, password, driverName, query;
-    private String userName;
+    private String url, password, driverName, querry, userName;
     private ResultSet result;
     public PreparedStatement pst;
     
@@ -79,9 +78,9 @@ public class KoneksiDatabase {
             forquerry = forquerry.substring(0, forquerry.length() - 1) + ")";
             values = values.substring(0, values.length() - 1) + ")";
             
-            query = ("INSERT INTO " + tabel + forquerry + values);
+            querry = ("INSERT INTO " + tabel + forquerry + values);
             
-            pst = koneksi_database().prepareStatement(query);
+            pst = koneksi_database().prepareStatement(querry);
             pst.execute();
             
           
@@ -102,9 +101,9 @@ public class KoneksiDatabase {
             }
             forquerry = forquerry.substring(0, forquerry.length() - 2);
             
-            query = ("UPDATE " + tabel + forquerry + " WHERE " + where + " = '" + value + "'");
+            querry = ("UPDATE " + tabel + forquerry + " WHERE " + where + " = '" + value + "'");
             
-            pst = koneksi_database().prepareStatement(query);
+            pst = koneksi_database().prepareStatement(querry);
             pst.execute();
   
         }
@@ -130,9 +129,9 @@ public class KoneksiDatabase {
     public void querry_delete(String table, String column, String value){
 //        DELETE FROM table_name WHERE condition;
         try{
-            query = ("DELETE FROM " + table + " WHERE " + column + " = '" + value + "'");
-            System.out.println(query);
-            pst = koneksi_database().prepareStatement(query);
+            querry = ("DELETE FROM " + table + " WHERE " + column + " = '" + value + "'");
+            System.out.println(querry);
+            pst = koneksi_database().prepareStatement(querry);
             pst.execute();
         }  
         catch(Exception e) {

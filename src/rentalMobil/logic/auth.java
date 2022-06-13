@@ -7,7 +7,32 @@ package rentalMobil.logic;
 import rentalMobil.view.login;
 import java.sql.ResultSet;
 
+
+
+
 public class auth extends KoneksiDatabase{
+    String username;
+    String password;
+    
+    
+    public String get_username() {
+        return username;
+    }
+    
+    public void set_username(String username) {
+        this.username = username;
+    }
+    
+    public String get_password() {
+        return password;
+    }
+    
+    public void set_password(String password) {
+        this.password = password;
+    }
+    
+    
+
     public boolean login(String username, String password){
         try{
             String sql = username + "' AND password = '" + password;
