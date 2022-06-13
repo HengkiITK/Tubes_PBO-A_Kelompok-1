@@ -20,24 +20,24 @@ public class ViewFromTransaksi extends javax.swing.JFrame{
         
     }
     
-    public static void main(String args[]) {
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ViewFromTransaksi().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new ViewFromTransaksi().setVisible(true);
+//            }
+//        });
+//    }
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -60,7 +60,7 @@ public class ViewFromTransaksi extends javax.swing.JFrame{
         jScrollPane2 = new javax.swing.JScrollPane();
         tableDataPeminjam = new javax.swing.JTable();
         textFieldSearch = new javax.swing.JTextField();
-        buttonSearch = new javax.swing.JButton();
+        back = new javax.swing.JButton();
         btnpinjam = new javax.swing.JButton();
         buttonSearch1 = new javax.swing.JButton();
         textFieldTelepon = new javax.swing.JTextField();
@@ -170,12 +170,17 @@ public class ViewFromTransaksi extends javax.swing.JFrame{
             }
         });
 
-        buttonSearch.setBackground(new java.awt.Color(246, 182, 133));
-        buttonSearch.setFont(new java.awt.Font("FZYaoTi", 1, 14)); // NOI18N
-        buttonSearch.setText("BACK");
-        buttonSearch.addActionListener(new java.awt.event.ActionListener() {
+        back.setBackground(new java.awt.Color(246, 182, 133));
+        back.setFont(new java.awt.Font("FZYaoTi", 1, 14)); // NOI18N
+        back.setText("BACK");
+        back.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                backMouseClicked(evt);
+            }
+        });
+        back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonSearchActionPerformed(evt);
+                backActionPerformed(evt);
             }
         });
 
@@ -245,7 +250,7 @@ public class ViewFromTransaksi extends javax.swing.JFrame{
                 .addGap(29, 29, 29)
                 .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(interfacePeminjamLayout.createSequentialGroup()
-                        .addComponent(buttonSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(textFieldSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(61, 61, 61)
@@ -319,7 +324,7 @@ public class ViewFromTransaksi extends javax.swing.JFrame{
                 .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textFieldSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(buttonSearch1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -351,9 +356,9 @@ public class ViewFromTransaksi extends javax.swing.JFrame{
         // TODO add your handling code here:
     }//GEN-LAST:event_textFieldSearchActionPerformed
 
-    private void buttonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSearchActionPerformed
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_buttonSearchActionPerformed
+    }//GEN-LAST:event_backActionPerformed
 
     private void btnpinjamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnpinjamActionPerformed
         try {
@@ -399,13 +404,18 @@ public class ViewFromTransaksi extends javax.swing.JFrame{
     private void dateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dateActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_dateActionPerformed
+
+    private void backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseClicked
+        new menu().run();
+        this.setVisible(false);
+    }//GEN-LAST:event_backMouseClicked
     
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField TextFieldEmail1;
+    private javax.swing.JButton back;
     private javax.swing.JButton btnpinjam;
-    private javax.swing.JButton buttonSearch;
     private javax.swing.JButton buttonSearch1;
     private javax.swing.JTextField date;
     private javax.swing.JTextField duration;

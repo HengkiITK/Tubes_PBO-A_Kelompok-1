@@ -6,6 +6,7 @@ package rentalMobil.logic;
 
 import java.sql.ResultSet;
 import javax.swing.table.DefaultTableModel;
+import rentalMobil.view.ViewMobil;
 
 /**
  *
@@ -42,6 +43,10 @@ public class DataMobil extends KoneksiDatabase{
         String[] data = {merk, tahun, no_pol, harga, "ready"};
         
         querry_insert("datamobil", column, data);
+    }
+    
+    public void run(){
+        new ViewMobil().setVisible(true);
     }
 
 }

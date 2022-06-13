@@ -13,6 +13,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
+import rentalMobil.view.ViewFormPengembalian;
 
 /**
  *
@@ -21,6 +22,10 @@ import javax.swing.table.DefaultTableModel;
 public class form_pengembalian extends KoneksiDatabase {
     String peminjam = ""; 
     String merk = "";
+    
+    public void run(){
+        new ViewFormPengembalian().setVisible(true);
+    }
     
     public void load_table(javax.swing.JTable tableDataPem) {
         try {

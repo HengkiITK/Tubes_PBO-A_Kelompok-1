@@ -6,6 +6,7 @@ package rentalMobil.logic;
 
 import java.sql.ResultSet;
 import javax.swing.table.DefaultTableModel;
+import rentalMobil.view.ViewFormUser;
 
 /**
  *
@@ -38,5 +39,9 @@ public class form_user extends KoneksiDatabase{
         String[] column = {"nama", "username", "password"};
         String[] data = {name, username, password};
         querry_insert("datauser", column, data);
+    }
+    
+    public void run(){
+        new ViewFormUser().setVisible(true);
     }
 }
