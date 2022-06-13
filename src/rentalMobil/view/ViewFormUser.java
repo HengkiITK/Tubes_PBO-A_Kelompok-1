@@ -84,6 +84,7 @@ public class ViewFormUser extends javax.swing.JFrame {
         jLabel5.setText("Nama");
 
         tableUser.setBackground(new java.awt.Color(194, 222, 209));
+        tableUser.setForeground(new java.awt.Color(0, 0, 0));
         tableUser.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},

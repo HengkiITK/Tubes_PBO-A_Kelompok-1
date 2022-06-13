@@ -95,7 +95,7 @@ public class ViewFromTransaksi extends javax.swing.JFrame{
         jScrollPane1.setViewportView(textFieldAlamat);
 
         tableDataPeminjam.setBackground(new java.awt.Color(194, 222, 209));
-        tableDataPeminjam.setForeground(new java.awt.Color(153, 255, 153));
+        tableDataPeminjam.setForeground(new java.awt.Color(0, 0, 0));
         tableDataPeminjam.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},

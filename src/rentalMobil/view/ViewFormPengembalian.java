@@ -100,6 +100,7 @@ public class ViewFormPengembalian extends javax.swing.JFrame {
         jLabel5.setText("Nama");
 
         tableTransaksi.setBackground(new java.awt.Color(194, 222, 209));
+        tableTransaksi.setForeground(new java.awt.Color(0, 0, 0));
         tableTransaksi.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null},
