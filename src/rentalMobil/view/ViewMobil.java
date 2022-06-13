@@ -278,6 +278,10 @@ public class ViewMobil extends javax.swing.JFrame {
         }
         
        dataMobil.load_table(tableMobil);
+       merk.setText("");
+       no_pol.setText("");
+       tahun.setText("");
+       harga.setText("");
     }//GEN-LAST:event_buttonSearch1MouseClicked
 
     private void backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseClicked

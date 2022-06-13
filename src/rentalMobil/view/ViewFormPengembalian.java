@@ -321,10 +321,15 @@ public class ViewFormPengembalian extends javax.swing.JFrame {
         form_pengembalian.pengembalian(id_transaksi.getText(), tgl_kembali.getText(), denda.getText());
         form_pengembalian.load_table(tableTransaksi);
         
-        
-        
-        
-
+        id_transaksi.setText("");
+        no_pol.setText("");
+        nama.setText("");
+        nama.setText("");
+        tgl_pinjam.setText("");
+        duration.setText("");
+        tgl_kembali.setText("");
+        denda.setText("");
+        harga.setText("");
     }//GEN-LAST:event_bayarMouseClicked
 
     private void bayarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bayarActionPerformed
