@@ -34,6 +34,8 @@ public class ViewMenu extends javax.swing.JFrame {
         sewa = new javax.swing.JButton();
         pengembalian = new javax.swing.JButton();
         user = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(32767, 32767));
@@ -42,12 +44,16 @@ public class ViewMenu extends javax.swing.JFrame {
         jPanel1.setMaximumSize(new java.awt.Dimension(1000, 750));
         jPanel1.setPreferredSize(new java.awt.Dimension(1000, 500));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        jLabel1.setBackground(new java.awt.Color(51, 51, 0));
+        jLabel1.setFont(new java.awt.Font("FZYaoTi", 0, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 51, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("MAIN MENU");
         jLabel1.setMaximumSize(new java.awt.Dimension(50, 25));
         jLabel1.setMinimumSize(new java.awt.Dimension(0, 0));
 
+        datamobil.setBackground(new java.awt.Color(210, 246, 197));
+        datamobil.setFont(new java.awt.Font("FZYaoTi", 0, 12)); // NOI18N
         datamobil.setText("Data Mobil");
         datamobil.setToolTipText("");
         datamobil.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -61,13 +67,17 @@ public class ViewMenu extends javax.swing.JFrame {
             }
         });
 
-        sewa.setText("Sewa");
+        sewa.setBackground(new java.awt.Color(210, 246, 197));
+        sewa.setFont(new java.awt.Font("FZYaoTi", 0, 12)); // NOI18N
+        sewa.setText("SEWA");
         sewa.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 sewaMouseClicked(evt);
             }
         });
 
+        pengembalian.setBackground(new java.awt.Color(210, 246, 197));
+        pengembalian.setFont(new java.awt.Font("FZYaoTi", 0, 12)); // NOI18N
         pengembalian.setText("Pengembalian");
         pengembalian.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -80,7 +90,9 @@ public class ViewMenu extends javax.swing.JFrame {
             }
         });
 
-        user.setText("Data User");
+        user.setBackground(new java.awt.Color(210, 246, 197));
+        user.setFont(new java.awt.Font("FZYaoTi", 0, 12)); // NOI18N
+        user.setText("Data  Admin");
         user.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 userMouseClicked(evt);
@@ -92,86 +104,100 @@ public class ViewMenu extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rentalMobil/aset/menu.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(227, 227, 227)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(sewa, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(datamobil, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 308, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pengembalian, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(user, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(164, 164, 164))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(100, 100, 100)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(datamobil, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(sewa, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(user, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pengembalian, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(60, 60, 60)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(391, 391, 391)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(73, 73, 73)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(datamobil, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(user, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(sewa, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pengembalian, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(119, Short.MAX_VALUE))
+                .addGap(54, 54, 54)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(65, 65, 65)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(datamobil, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(37, 37, 37)
+                                .addComponent(jLabel2))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(sewa, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addComponent(user, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(pengembalian, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(109, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 980, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 775, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 512, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void datamobilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_datamobilActionPerformed
+    private void userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_datamobilActionPerformed
-
-    private void pengembalianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pengembalianActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_pengembalianActionPerformed
-
-    private void datamobilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_datamobilMouseClicked
-        new menu().mobil();
-        this.setVisible(false);
-    }//GEN-LAST:event_datamobilMouseClicked
-
-    private void sewaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sewaMouseClicked
-        new menu().transaksi();
-        this.setVisible(false);
-    }//GEN-LAST:event_sewaMouseClicked
-
-    private void pengembalianMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pengembalianMouseClicked
-        new menu().pengembalian();
-        this.setVisible(false);
-    }//GEN-LAST:event_pengembalianMouseClicked
+    }//GEN-LAST:event_userActionPerformed
 
     private void userMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userMouseClicked
         new menu().user();
         this.setVisible(false);
     }//GEN-LAST:event_userMouseClicked
 
-    private void userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userActionPerformed
+    private void pengembalianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pengembalianActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_userActionPerformed
+    }//GEN-LAST:event_pengembalianActionPerformed
+
+    private void pengembalianMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pengembalianMouseClicked
+        new menu().pengembalian();
+        this.setVisible(false);
+    }//GEN-LAST:event_pengembalianMouseClicked
+
+    private void sewaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sewaMouseClicked
+        new menu().transaksi();
+        this.setVisible(false);
+    }//GEN-LAST:event_sewaMouseClicked
+
+    private void datamobilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_datamobilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_datamobilActionPerformed
+
+    private void datamobilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_datamobilMouseClicked
+        new menu().mobil();
+        this.setVisible(false);
+    }//GEN-LAST:event_datamobilMouseClicked
 
     /**
      * @param args the command line arguments
@@ -212,6 +238,8 @@ public class ViewMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton datamobil;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton pengembalian;
     private javax.swing.JButton sewa;

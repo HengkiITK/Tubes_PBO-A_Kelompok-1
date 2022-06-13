@@ -49,11 +49,11 @@ public class ViewFromTransaksi extends javax.swing.JFrame{
         labelAlamat3 = new javax.swing.JLabel();
         duration = new javax.swing.JTextField();
         date = new javax.swing.JTextField();
-        labelNama1 = new javax.swing.JLabel();
+        labelAlamat4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        interfacePeminjam.setBackground(new java.awt.Color(255, 246, 218));
+        interfacePeminjam.setBackground(new java.awt.Color(250, 242, 233));
 
         labelTelepon.setFont(new java.awt.Font("FZYaoTi", 0, 18)); // NOI18N
         labelTelepon.setForeground(new java.awt.Color(185, 22, 78));
@@ -95,6 +95,7 @@ public class ViewFromTransaksi extends javax.swing.JFrame{
         jScrollPane1.setViewportView(textFieldAlamat);
 
         tableDataPeminjam.setBackground(new java.awt.Color(194, 222, 209));
+        tableDataPeminjam.setForeground(new java.awt.Color(153, 255, 153));
         tableDataPeminjam.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -193,20 +194,23 @@ public class ViewFromTransaksi extends javax.swing.JFrame{
         labelAlamat3.setForeground(new java.awt.Color(185, 22, 78));
         labelAlamat3.setText("Tanggal");
 
+        duration.setBackground(new java.awt.Color(233, 239, 192));
         duration.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 durationActionPerformed(evt);
             }
         });
 
+        date.setBackground(new java.awt.Color(233, 239, 192));
         date.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dateActionPerformed(evt);
             }
         });
 
-        labelNama1.setFont(new java.awt.Font("FZYaoTi", 0, 36)); // NOI18N
-        labelNama1.setText("Form Penyewaan Mobil");
+        labelAlamat4.setFont(new java.awt.Font("FZYaoTi", 0, 18)); // NOI18N
+        labelAlamat4.setForeground(new java.awt.Color(185, 22, 78));
+        labelAlamat4.setText("Hari");
 
         javax.swing.GroupLayout interfacePeminjamLayout = new javax.swing.GroupLayout(interfacePeminjam);
         interfacePeminjam.setLayout(interfacePeminjamLayout);
@@ -214,7 +218,8 @@ public class ViewFromTransaksi extends javax.swing.JFrame{
             interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(interfacePeminjamLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(back, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(interfacePeminjamLayout.createSequentialGroup()
                         .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(interfacePeminjamLayout.createSequentialGroup()
@@ -231,17 +236,20 @@ public class ViewFromTransaksi extends javax.swing.JFrame{
                                     .addComponent(jScrollPane1)
                                     .addComponent(textFieldTelepon, javax.swing.GroupLayout.DEFAULT_SIZE, 296, Short.MAX_VALUE)
                                     .addComponent(TextFieldEmail1)))
-                            .addComponent(labelAlamat2)
                             .addGroup(interfacePeminjamLayout.createSequentialGroup()
                                 .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(labelAlamat1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(labelAlamat3))
+                                    .addComponent(labelAlamat3)
+                                    .addComponent(labelAlamat2))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(no_pol, javax.swing.GroupLayout.DEFAULT_SIZE, 296, Short.MAX_VALUE)
-                                    .addComponent(duration)
-                                    .addComponent(date))))
-                        .addGap(58, 58, 58)
+                                    .addComponent(date)
+                                    .addGroup(interfacePeminjamLayout.createSequentialGroup()
+                                        .addComponent(duration, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(labelAlamat4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(71, 71, 71)
                         .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnpinjam, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 755, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -275,25 +283,25 @@ public class ViewFromTransaksi extends javax.swing.JFrame{
                 .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelAlamat1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(no_pol, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
-                .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelAlamat2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(duration, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(labelAlamat2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(duration, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(labelAlamat4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelAlamat3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(interfacePeminjamLayout.createSequentialGroup()
-                .addGap(3, 3, 3)
-                .addGroup(interfacePeminjamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelNama1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
+                .addGap(16, 16, 16)
+                .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnpinjam, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -388,6 +396,7 @@ public class ViewFromTransaksi extends javax.swing.JFrame{
     private javax.swing.JLabel labelAlamat1;
     private javax.swing.JLabel labelAlamat2;
     private javax.swing.JLabel labelAlamat3;
+    private javax.swing.JLabel labelAlamat4;
     private javax.swing.JLabel labelEmail;
     private javax.swing.JLabel labelNama;
     private javax.swing.JLabel labelNama1;
