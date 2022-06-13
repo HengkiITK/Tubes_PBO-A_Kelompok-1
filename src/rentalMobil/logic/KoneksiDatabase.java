@@ -75,6 +75,7 @@ public class KoneksiDatabase {
                 values = values + "'" + data[index]+ "',";
                 index++;
             }
+            
             forquerry = forquerry.substring(0, forquerry.length() - 1) + ")";
             values = values.substring(0, values.length() - 1) + ")";
             
@@ -105,9 +106,9 @@ public class KoneksiDatabase {
             
             pst = koneksi_database().prepareStatement(query);
             pst.execute();
-            
-          
+  
         }
+        
         catch(Exception e) {
             e.printStackTrace();
         }
@@ -138,4 +139,5 @@ public class KoneksiDatabase {
             e.printStackTrace();
         }
     }
+
 }
