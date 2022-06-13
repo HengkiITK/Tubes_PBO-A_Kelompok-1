@@ -38,6 +38,7 @@ public class ViewMenu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(32767, 32767));
 
+        jPanel1.setBackground(new java.awt.Color(250, 242, 233));
         jPanel1.setMaximumSize(new java.awt.Dimension(1000, 750));
         jPanel1.setPreferredSize(new java.awt.Dimension(1000, 500));
 

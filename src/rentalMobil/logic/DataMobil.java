@@ -13,6 +13,10 @@ import rentalMobil.view.ViewMobil;
  * @author ASUS
  */
 public class DataMobil extends KoneksiDatabase{
+    public void run(){
+        new ViewMobil().setVisible(true);
+    }
+    
     public void load_table(javax.swing.JTable tableDataPem) {
         try {
             DefaultTableModel tableModel = (DefaultTableModel) tableDataPem.getModel();
@@ -49,8 +53,5 @@ public class DataMobil extends KoneksiDatabase{
         querry_delete("datamobil", "no_pol", no_pol);
     }
     
-    public void run(){
-        new ViewMobil().setVisible(true);
-    }
 
 }

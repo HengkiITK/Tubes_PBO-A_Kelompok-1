@@ -13,6 +13,10 @@ import rentalMobil.view.ViewFormUser;
  * @author ASUS
  */
 public class form_user extends KoneksiDatabase{
+    public void run(){
+        new ViewFormUser().setVisible(true);
+    }
+    
     public void load_table(javax.swing.JTable table){
         try {
             DefaultTableModel tableModel = (DefaultTableModel) table.getModel();
@@ -43,9 +47,5 @@ public class form_user extends KoneksiDatabase{
     
     public void delete_user(String username){
         querry_delete("datauser", "username", username);
-    }
-    
-    public void run(){
-        new ViewFormUser().setVisible(true);
-    }
+    }   
 }
