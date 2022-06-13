@@ -13,7 +13,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class DataMobil extends KoneksiDatabase{
     public void load_table(javax.swing.JTable tableDataPem) {
-                try {
+        try {
             DefaultTableModel tableModel = (DefaultTableModel) tableDataPem.getModel();
             
             ResultSet dataTable = querry_selectAll("datamobil");
@@ -35,6 +35,13 @@ public class DataMobil extends KoneksiDatabase{
         catch(Exception e) {
             e.printStackTrace();
         }
+    }
+    
+    public void add_mobil(String merk, String tahun, String no_pol, String harga){
+        String[] column = {"merk", "tahun", "no_pol", "harga", "status"};
+        String[] data = {merk, tahun, no_pol, harga, "ready"};
+        
+        querry_insert("datamobil", column, data);
     }
 
 }

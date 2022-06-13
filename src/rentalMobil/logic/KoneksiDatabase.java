@@ -1,7 +1,7 @@
 
 package rentalMobil.logic;
 
-import java.sql.Connection;
+import java.sql.Connection; 
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -55,7 +55,7 @@ public class KoneksiDatabase {
         try {
             Statement stm = koneksi_database().createStatement();
             
-            result = stm.executeQuery("SELECT * FROM " + table + " WHERE " + where + " = " + value);
+            result = stm.executeQuery("SELECT * FROM " + table + " WHERE " + where + " = '" + value + "'");
         }  
         catch(Exception e) {
             e.printStackTrace();
@@ -64,19 +64,21 @@ public class KoneksiDatabase {
         return result;
     }
     
-    public void querry_insert(String tabel, String nama, String telepon, String email, String alamat) {
+    public void querry_insert(String tabel, String[] cloumn, String[] data) {
         try {
-            query = ("INSERT INTO " 
-                    + tabel
-                    + "(nama, "
-                    + "alamat, "
-                    + "telepon, "
-                    + "email) "
-                    + "values"
-                    + " ('"+nama+"',"
-                    + " '"+alamat+"',"
-                    + " '"+telepon+"',"
-                    + " '"+email+"') ");
+            String forquerry = "(";
+            String values = " VALUES (";
+            int index = 0;
+            
+            for(String param : cloumn) {
+                forquerry = forquerry + param + ",";
+                values = values + "'" + data[index]+ "',";
+                index++;
+            }
+            forquerry = forquerry.substring(0, forquerry.length() - 1) + ")";
+            values = values.substring(0, values.length() - 1) + ")";
+            
+            query = ("INSERT INTO " + tabel + forquerry + values);
             
             pst = koneksi_database().prepareStatement(query);
             pst.execute();
@@ -87,5 +89,40 @@ public class KoneksiDatabase {
             e.printStackTrace();
         }
     }
-   
+    
+    public void querry_update(String tabel, String[] column, String[] data, String where, String value) {
+        try {
+            String forquerry = " SET ";
+            int index = 0;
+            
+            for(String param : column) {
+                forquerry = forquerry + param + " = '" + data[index] + "', ";
+                index++;
+            }
+            forquerry = forquerry.substring(0, forquerry.length() - 2);
+            
+            query = ("UPDATE " + tabel + forquerry + " WHERE " + where + " = '" + value + "'");
+            
+            pst = koneksi_database().prepareStatement(query);
+            pst.execute();
+            
+          
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public ResultSet get_lastData (String table, String param){
+        try {
+            Statement stm = koneksi_database().createStatement();
+            
+            result = stm.executeQuery("SELECT * FROM " + table + " ORDER BY "+ param + " DESC LIMIT 1");
+        }  
+        catch(Exception e) {
+            e.printStackTrace();
+        }
+        
+        return result;
+    }
 }
