@@ -370,6 +370,7 @@ public class ViewFromTransaksi extends javax.swing.JFrame{
                 no_pol.getText() ,
                 date.getText(), 
                 duration.getText()); 
+            TablePeminjam.load_table(tableDataPeminjam);
             
         }
         catch (Exception e) {

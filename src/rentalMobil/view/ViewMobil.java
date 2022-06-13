@@ -44,7 +44,7 @@ public class ViewMobil extends javax.swing.JFrame {
         buttonSearch1 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         no_pol = new javax.swing.JTextField();
-        buttonSearch2 = new javax.swing.JButton();
+        delete = new javax.swing.JButton();
         tahun = new javax.swing.JTextField();
         harga = new javax.swing.JTextField();
         merk = new javax.swing.JTextField();
@@ -148,12 +148,17 @@ public class ViewMobil extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
         jLabel6.setText("Harga");
 
-        buttonSearch2.setBackground(new java.awt.Color(255, 102, 102));
-        buttonSearch2.setFont(new java.awt.Font("FZYaoTi", 1, 14)); // NOI18N
-        buttonSearch2.setText("HAPUS");
-        buttonSearch2.addActionListener(new java.awt.event.ActionListener() {
+        delete.setBackground(new java.awt.Color(255, 102, 102));
+        delete.setFont(new java.awt.Font("FZYaoTi", 1, 14)); // NOI18N
+        delete.setText("HAPUS");
+        delete.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                deleteMouseClicked(evt);
+            }
+        });
+        delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonSearch2ActionPerformed(evt);
+                deleteActionPerformed(evt);
             }
         });
 
@@ -192,7 +197,7 @@ public class ViewMobil extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(buttonSearch1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonSearch2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30))
         );
         jPanel1Layout.setVerticalGroup(
@@ -227,7 +232,7 @@ public class ViewMobil extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(buttonSearch1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(46, 46, 46)
-                        .addComponent(buttonSearch2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(171, 171, 171)))
                 .addContainerGap(85, Short.MAX_VALUE))
         );
@@ -251,9 +256,9 @@ public class ViewMobil extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buttonSearch2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSearch2ActionPerformed
+    private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_buttonSearch2ActionPerformed
+    }//GEN-LAST:event_deleteActionPerformed
 
     private void buttonSearch1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSearch1ActionPerformed
         // TODO add your handling code here:
@@ -279,6 +284,12 @@ public class ViewMobil extends javax.swing.JFrame {
         new menu().run();
         this.setVisible(false);
     }//GEN-LAST:event_backMouseClicked
+
+    private void deleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteMouseClicked
+        DataMobil dataMobil = new DataMobil();
+        dataMobil.delete_mobil(no_pol.getText());
+        dataMobil.load_table(tableMobil);
+    }//GEN-LAST:event_deleteMouseClicked
 
     /**
      * @param args the command line arguments
@@ -318,7 +329,7 @@ public class ViewMobil extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back;
     private javax.swing.JButton buttonSearch1;
-    private javax.swing.JButton buttonSearch2;
+    private javax.swing.JButton delete;
     private javax.swing.JTextField harga;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel2;

@@ -54,7 +54,7 @@ public class KoneksiDatabase {
     public ResultSet querry_select(String table, String where, String value){
         try {
             Statement stm = koneksi_database().createStatement();
-            
+            System.out.println("SELECT * FROM " + table + " WHERE " + where + " = '" + value + "'");
             result = stm.executeQuery("SELECT * FROM " + table + " WHERE " + where + " = '" + value + "'");
         }  
         catch(Exception e) {
@@ -124,5 +124,18 @@ public class KoneksiDatabase {
         }
         
         return result;
+    }
+    
+    public void querry_delete(String table, String column, String value){
+//        DELETE FROM table_name WHERE condition;
+        try{
+            query = ("DELETE FROM " + table + " WHERE " + column + " = '" + value + "'");
+            System.out.println(query);
+            pst = koneksi_database().prepareStatement(query);
+            pst.execute();
+        }  
+        catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 }

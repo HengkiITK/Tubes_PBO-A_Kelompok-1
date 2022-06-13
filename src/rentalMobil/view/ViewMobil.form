@@ -108,7 +108,7 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="buttonSearch1" min="-2" pref="115" max="-2" attributes="0"/>
-                      <Component id="buttonSearch2" min="-2" pref="115" max="-2" attributes="0"/>
+                      <Component id="delete" min="-2" pref="115" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
@@ -153,7 +153,7 @@
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="buttonSearch1" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                          <Component id="buttonSearch2" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="delete" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="171" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -298,7 +298,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="no_pol">
         </Component>
-        <Component class="javax.swing.JButton" name="buttonSearch2">
+        <Component class="javax.swing.JButton" name="delete">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="66" red="ff" type="rgb"/>
@@ -309,7 +309,8 @@
             <Property name="text" type="java.lang.String" value="HAPUS"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonSearch2ActionPerformed"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="deleteMouseClicked"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deleteActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="tahun">
