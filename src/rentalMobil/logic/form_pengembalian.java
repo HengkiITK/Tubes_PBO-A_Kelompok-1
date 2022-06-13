@@ -86,7 +86,7 @@ public class form_pengembalian extends KoneksiDatabase {
                 long banyak_denda = 50000 * (diffrence - Integer. parseInt(duration));
                 denda.setText(String.valueOf(banyak_denda));
             } else {
-                denda.setText("0");
+                denda.setText("");
             }
         } catch (ParseException ex) {
             Logger.getLogger(form_pengembalian.class.getName()).log(Level.SEVERE, null, ex);

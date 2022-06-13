@@ -41,6 +41,10 @@ public class form_user extends KoneksiDatabase{
         querry_insert("datauser", column, data);
     }
     
+    public void delete_user(String username){
+        querry_delete("datauser", "username", username);
+    }
+    
     public void run(){
         new ViewFormUser().setVisible(true);
     }

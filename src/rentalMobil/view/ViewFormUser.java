@@ -239,7 +239,6 @@ public class ViewFormUser extends javax.swing.JFrame {
     }//GEN-LAST:event_backActionPerformed
 
     private void simpanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_simpanMouseClicked
-        form_user = new form_user();
         form_user.add_user(name.getText(), username.getText(), password.getText());
         form_user.load_table(tableUser);
     }//GEN-LAST:event_simpanMouseClicked
@@ -253,7 +252,8 @@ public class ViewFormUser extends javax.swing.JFrame {
     }//GEN-LAST:event_nameActionPerformed
 
     private void deleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteMouseClicked
-        // TODO add your handling code here:
+        form_user.delete_user(username.getText());
+        form_user.load_table(tableUser);
     }//GEN-LAST:event_deleteMouseClicked
 
     private void backMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseEntered

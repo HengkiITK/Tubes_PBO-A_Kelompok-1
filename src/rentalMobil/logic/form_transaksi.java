@@ -56,19 +56,28 @@ abstract class form_transaksi extends KoneksiDatabase{
 
             querry_insert("datapeminjam", column, data);
 
-            ResultSet dataPeminjam = get_lastData("datapeminjam", "id_penyewa");
-            ResultSet dataMobil = querry_select("datamobil", "no_pol", no_pol);
+            ResultSet dataPenyewa = get_lastData("datapeminjam", "id_penyewa");
+            int id_penyewa = 0;
+            
+            while(dataPenyewa.next()){
+                id_penyewa = dataPenyewa.getInt("id_penyewa");
+            }
+            
+            ResultSet dataMobil = querry_select("datamobil", "no_pol = '" + no_pol + "' AND status" , "ready");
 
             int harga = Integer.parseInt(duration) * 200000;
             
             while(dataMobil.next()) {
                 int id_mobil = dataMobil.getInt("id_mobil");
-                int id_penyewa = dataMobil.getInt("id_mobil");
                 
-                String[] column2 = {"id_mobil", "id_penyewa", "no_pol", "harga", "tgl_pinjam", "lama"};
+                String[] columnTransaksi = {"id_mobil", "id_penyewa", "no_pol", "harga", "tgl_pinjam", "lama"};
                 String[] value = {Integer.toString(id_mobil), Integer.toString(id_penyewa) , no_pol, Integer.toString(harga), date, duration};
 
-                querry_insert("datatransaksi",column2, value);
+                querry_insert("datatransaksi",columnTransaksi, value);
+                
+                String[] columnUpdate = {"status"};
+                String[] valueUpdate = {"dirental"};
+                querry_update("datamobil", columnUpdate, valueUpdate, "no_pol", no_pol);
             }
             
             

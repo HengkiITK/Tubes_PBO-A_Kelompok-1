@@ -45,6 +45,10 @@ public class DataMobil extends KoneksiDatabase{
         querry_insert("datamobil", column, data);
     }
     
+    public void delete_mobil(String no_pol){
+        querry_delete("datamobil", "no_pol", no_pol);
+    }
+    
     public void run(){
         new ViewMobil().setVisible(true);
     }
