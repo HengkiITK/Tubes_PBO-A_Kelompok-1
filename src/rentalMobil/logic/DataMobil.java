@@ -27,13 +27,13 @@ public class DataMobil extends KoneksiDatabase{
             
             while(dataTable.next()) {
                 int id = dataTable.getInt("id_mobil");
-                String nama = dataTable.getString("merk");
-                String telepon = dataTable.getString("tahun");
-                String email = dataTable.getString("no_pol");
-                String alamat = dataTable.getString("harga");
+                String merk = dataTable.getString("merk");
+                String tahun = dataTable.getString("tahun");
+                String no_pol = dataTable.getString("no_pol");
+                String harga = dataTable.getString("harga");
                 String status = dataTable.getString("status");
                 
-                tableModel.addRow(new Object[] {id, nama, telepon, email, alamat, status});
+                tableModel.addRow(new Object[] {id, merk, no_pol, tahun, harga, status});
             }
             
         }  
