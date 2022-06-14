@@ -94,7 +94,7 @@ public class form_pengembalian extends KoneksiDatabase {
         String[] column = {"tgl_kembali", "denda"};
         String[] data = {tgl_kembali, denda};
         querry_update("datatransaksi", column, data, "id_transaksi", id);
-
+        
         String[] columnMobil = {"status"};
         String[] dataMobil = {"ready"};
         querry_update("datamobil", columnMobil, dataMobil, "no_pol", no_pol);
