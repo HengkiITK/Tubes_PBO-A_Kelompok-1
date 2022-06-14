@@ -102,7 +102,7 @@ public class KoneksiDatabase {
             forquerry = forquerry.substring(0, forquerry.length() - 2);
             
             querry = ("UPDATE " + tabel + forquerry + " WHERE " + where + " = '" + value + "'");
-            
+            System.out.println(querry);
             pst = koneksi_database().prepareStatement(querry);
             pst.execute();
   

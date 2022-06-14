@@ -49,10 +49,8 @@ public class ViewFormPengembalian extends javax.swing.JFrame {
         tableTransaksi = new javax.swing.JTable();
         bayar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        no_pol = new javax.swing.JTextField();
         nama = new javax.swing.JTextField();
-        harga = new javax.swing.JTextField();
-        id_transaksi = new javax.swing.JTextField();
+        no_pol = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         tgl_pinjam = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
@@ -63,6 +61,8 @@ public class ViewFormPengembalian extends javax.swing.JFrame {
         denda = new javax.swing.JTextField();
         cari = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
+        id_transaksi = new javax.swing.JTextField();
+        harga = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -100,7 +100,6 @@ public class ViewFormPengembalian extends javax.swing.JFrame {
         jLabel5.setText("Nama");
 
         tableTransaksi.setBackground(new java.awt.Color(194, 222, 209));
-        tableTransaksi.setForeground(new java.awt.Color(0, 0, 0));
         tableTransaksi.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null},
@@ -162,23 +161,12 @@ public class ViewFormPengembalian extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(215, 22, 51));
         jLabel6.setText("Harga");
 
+        nama.setBackground(new java.awt.Color(233, 239, 192));
+
         no_pol.setBackground(new java.awt.Color(233, 239, 192));
-        no_pol.setForeground(new java.awt.Color(233, 239, 192));
         no_pol.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 no_polActionPerformed(evt);
-            }
-        });
-
-        nama.setBackground(new java.awt.Color(233, 239, 192));
-
-        harga.setBackground(new java.awt.Color(233, 239, 192));
-        harga.setForeground(new java.awt.Color(233, 239, 192));
-
-        id_transaksi.setBackground(new java.awt.Color(233, 239, 192));
-        id_transaksi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                id_transaksiActionPerformed(evt);
             }
         });
 
@@ -215,7 +203,6 @@ public class ViewFormPengembalian extends javax.swing.JFrame {
 
         cari.setBackground(new java.awt.Color(244, 191, 191));
         cari.setFont(new java.awt.Font("FZYaoTi", 0, 12)); // NOI18N
-        cari.setForeground(new java.awt.Color(0, 0, 0));
         cari.setText("Search");
         cari.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -232,6 +219,20 @@ public class ViewFormPengembalian extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(215, 22, 51));
         jLabel11.setText("Hari");
+
+        id_transaksi.setBackground(new java.awt.Color(233, 239, 192));
+        id_transaksi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                id_transaksiActionPerformed(evt);
+            }
+        });
+
+        harga.setBackground(new java.awt.Color(233, 239, 192));
+        harga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hargaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -259,11 +260,12 @@ public class ViewFormPengembalian extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(harga, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(id_transaksi, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(cari)))
+                                .addComponent(cari))
+                            .addComponent(no_pol, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(harga, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(70, 70, 70)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -288,7 +290,6 @@ public class ViewFormPengembalian extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                     .addComponent(nama, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(no_pol, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(141, 141, 141)
                         .addComponent(jLabel3)))
@@ -307,13 +308,15 @@ public class ViewFormPengembalian extends javax.swing.JFrame {
                 .addGap(6, 6, 6)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(id_transaksi, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cari))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(40, 40, 40)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel2)
+                                    .addComponent(cari)))
+                            .addComponent(id_transaksi, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
                             .addComponent(no_pol, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -335,16 +338,17 @@ public class ViewFormPengembalian extends javax.swing.JFrame {
                     .addComponent(tgl_kembali, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(denda, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(bayar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(harga))
-                .addGap(30, 40, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                        .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(denda, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bayar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(harga, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addContainerGap(64, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -386,10 +390,6 @@ public class ViewFormPengembalian extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_bayarActionPerformed
 
-    private void no_polActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_no_polActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_no_polActionPerformed
-
     private void cariMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cariMouseClicked
         String idTransaksi = id_transaksi.getText();
         
@@ -405,13 +405,21 @@ public class ViewFormPengembalian extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_backMouseClicked
 
-    private void id_transaksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_id_transaksiActionPerformed
+    private void no_polActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_no_polActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_id_transaksiActionPerformed
+    }//GEN-LAST:event_no_polActionPerformed
 
     private void cariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cariActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cariActionPerformed
+
+    private void id_transaksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_id_transaksiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_id_transaksiActionPerformed
+
+    private void hargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hargaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_hargaActionPerformed
 
     /**
      * @param args the command line arguments

@@ -58,6 +58,7 @@ public class form_pengembalian extends KoneksiDatabase {
         try {
             ResultSet dataTransaksi = querry_select("datatransaksi JOIN datamobil ON datatransaksi.id_mobil = datamobil.id_mobil JOIN datapeminjam ON datatransaksi.id_penyewa = datapeminjam.id_penyewa", "id_transaksi", id);
             while(dataTransaksi.next()){
+                System.out.println(dataTransaksi.getString("no_pol"));
                 no_pol.setText(dataTransaksi.getString("no_pol"));
                 nama.setText(dataTransaksi.getString("nama"));
                 harga.setText(dataTransaksi.getString("harga"));
