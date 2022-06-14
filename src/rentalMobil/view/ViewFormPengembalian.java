@@ -366,7 +366,7 @@ public class ViewFormPengembalian extends javax.swing.JFrame {
     }//GEN-LAST:event_backActionPerformed
 
     private void bayarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bayarMouseClicked
-        form_pengembalian.pengembalian(id_transaksi.getText(), tgl_kembali.getText(), denda.getText());
+        form_pengembalian.pengembalian(id_transaksi.getText(), no_pol.getText(), tgl_kembali.getText(), denda.getText());
         form_pengembalian.load_table(tableTransaksi);
         
         id_transaksi.setText("");
