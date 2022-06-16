@@ -18,9 +18,12 @@ public class ViewRiwayatTransaksi extends javax.swing.JFrame {
      * Creates new form ViewRiwayatTransaksi
      */
     public ViewRiwayatTransaksi() {
+        String querry = "datatransaksi JOIN datamobil ON datatransaksi.id_mobil = datamobil.id_mobil JOIN datapeminjam ON datatransaksi.id_penyewa = datapeminjam.id_penyewa";
+        String[] rowTittleAll = {"id_transaksi", "merk", "no_pol", "nama", "harga","tgl_pinjam", "lama", "tgl_kembali", "denda"};
+    
         Riwayat = new riwayat();
         initComponents();
-        Riwayat.load_table(jTableRiwayat);
+        Riwayat.load_table(jTableRiwayat, querry, rowTittleAll, "tgl_kembali !", "");
     }
 
     /**

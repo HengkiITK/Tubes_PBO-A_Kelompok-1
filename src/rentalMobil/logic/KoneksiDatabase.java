@@ -84,7 +84,7 @@ public class KoneksiDatabase {
     public ResultSet querry_select(String table, String where, String value){
         try {
             stm = koneksi_database().createStatement();
-            result = stm.executeQuery("SELECT * FROM " + table + " WHERE " + where + " = '" + value + "'");
+            result = stm.executeQuery("SELECT * FROM " + table + " WHERE " + where + "= '" + value + "'");
         }  
         catch(Exception e) {
             e.printStackTrace();

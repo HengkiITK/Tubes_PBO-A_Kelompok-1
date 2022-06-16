@@ -19,9 +19,13 @@ public class ViewFormPengembalian extends javax.swing.JFrame {
      * Creates new form DataPengembalian
      */
     public ViewFormPengembalian() {
+        String querry = "datatransaksi JOIN datamobil ON datatransaksi.id_mobil = datamobil.id_mobil JOIN datapeminjam ON datatransaksi.id_penyewa = datapeminjam.id_penyewa";
+        String[] rowTittleAll = {"id_transaksi", "merk", "no_pol", "nama", "harga","tgl_pinjam", "lama", "tgl_kembali", "denda"};
         form_pengembalian = new form_pengembalian();
         initComponents();
-        form_pengembalian.load_table(tableTransaksi);
+    
+        form_pengembalian.load_table(tableTransaksi, querry, rowTittleAll, "tgl_kembali ", "");
+   
     }
 
     /**
