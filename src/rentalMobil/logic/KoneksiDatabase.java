@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.sql.PreparedStatement;
 import javax.swing.table.DefaultTableModel;
+import java.util.ArrayList;
         
 public class KoneksiDatabase {
     private Connection connect;
@@ -23,6 +24,36 @@ public class KoneksiDatabase {
 
     }
     
+    public void load_table(javax.swing.JTable table, String database, String[] rowTittleAll, String where, String where_value){
+        int lenght = rowTittleAll.length;
+        int index = 0;
+        Object[] data = new Object[lenght];
+        ResultSet dataTable;
+        try {
+            DefaultTableModel tableModel = (DefaultTableModel) table.getModel();
+//           
+            if (where == ""){
+                dataTable = querry_selectAll(database);
+            } else {
+                dataTable = querry_select(database, where, where_value);
+            }
+//            
+            tableModel.setRowCount(0);
+//            
+            while(dataTable.next()) {
+                for(String title : rowTittleAll){
+                    data[index] = dataTable.getString(title);
+                    index++;
+                }
+                index = 0;
+                
+                tableModel.addRow(data);
+            }
+        }  
+        catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
     
     public Connection koneksi_database() {
         if(connect == null) {
@@ -37,61 +68,7 @@ public class KoneksiDatabase {
         }
         return connect;       
     }
-    
-    public void load_table(
-            javax.swing.JTable table, 
-            String tableDatabase, 
-            String [] rowTitleAll,
-            String rowTitle,
-            String value) {
-        
-        try {
-            stm = koneksi_database().createStatement();
-            ResultSet dataTableAll = querry_selectAll(tableDatabase);
-            ResultSet dataTable = querry_select(tableDatabase, rowTitle, value);
-            
-            DefaultTableModel tableModel = (DefaultTableModel) table.getModel();
-        
-            tableModel.setRowCount(0);
-            if ("ready".equals(value)) {
-                int index = 0;
-                while(dataTable.next()) {
-                    for (String a : rowTitleAll) {
-                        String row = dataTable.getString(rowTitleAll[index]);
-                        index++;
-                        if(row.length() == 5) {
-                            tableModel.addRow(new Object[] {row.length() == 1, row.length() == 7});
-                        }
-                    }
-                }  
-            }
-            
-            else {
-                while(dataTableAll.next()) {
-                    try {
-                        int id_mobil = dataTableAll.getInt(rowTitleAll[0]);
-                        String merk_mobil = dataTableAll.getString(rowTitleAll[1]);
-                        String tahun_mobil = dataTableAll.getString(rowTitleAll[2]);
-                        String no_plat = dataTableAll.getString(rowTitleAll[3]);
-                        String harga_rental = dataTableAll.getString(rowTitleAll[4]);
-                        String status_mobil = dataTableAll.getString(rowTitleAll[5]);
 
-                        tableModel.addRow(new Object[] {id_mobil, 
-                            merk_mobil, no_plat, tahun_mobil, harga_rental, status_mobil});
-                    }
-                
-                catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        }
-        
-        catch(Exception e) {
-            e.printStackTrace();
-        }
-    }
-    
     public ResultSet querry_selectAll(String table){
         try {
             Statement stm = koneksi_database().createStatement();

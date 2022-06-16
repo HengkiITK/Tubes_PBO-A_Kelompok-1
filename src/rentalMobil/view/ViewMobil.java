@@ -14,7 +14,7 @@ import rentalMobil.logic.menu;
  */
 public class ViewMobil extends javax.swing.JFrame {
     public DataMobil dataMobil;
-    private String [] rowTitleAll = {"id_mobil", "merk", "tahun", "no_pol", "harga", "status"};
+    private String [] rowTitleAll = {"id_mobil", "merk", "no_pol", "tahun", "harga", "status"};
     /**
      * Creates new form DataMobil
      */
