@@ -13,26 +13,32 @@ import rentalMobil.view.ViewMenu;
 public class menu implements form{
     @Override
     public void run(){
-        new ViewMenu().setVisible(true);
+        ViewMenu viewmenu = new ViewMenu();
+        viewmenu.setVisible(true);
     }
     
     public void transaksi(){
-        new form_peminjaman().run();
+        form_peminjaman formPeminjaman = new form_peminjaman();
+        formPeminjaman.run();
     }
     
     public void pengembalian(){
-        new form_pengembalian().run();
+        form_pengembalian form_pengembalian = new form_pengembalian();
+        form_pengembalian.run();
     }
     
     public void mobil(){
-        new DataMobil().run();
+        DataMobil DataMobil = new DataMobil();
+        DataMobil.run();
     }
     
     public void user(){
-        new form_user().run();
+        form_user form_user = new form_user();
+        form_user.run();
     }
     
     public void riwayat() {
-        new riwayat().run();      
+        riwayat riwayat = new riwayat();
+        riwayat.run();     
     }
 }
