@@ -8,29 +8,29 @@ abstract class form_transaksi extends KoneksiDatabase{
    
     public abstract void run();
                                 
-    public void load_table(javax.swing.JTable tableDataPeminjam) {
-        try {
-            DefaultTableModel tableModel = (DefaultTableModel) tableDataPeminjam.getModel();
-            
-            ResultSet dataTable = querry_select("datamobil", "status", "ready");
-            
-            tableModel.setRowCount(0);
-            
-            while(dataTable.next()) {
-                String merk = dataTable.getString("merk");
-                int id = dataTable.getInt("id_mobil");
-                String  tahun = dataTable.getString("tahun");
-                String noPolisi = dataTable.getString("no_pol");
-                String harga = dataTable.getString("harga");
-                
-                tableModel.addRow(new Object[] { id, merk, tahun, noPolisi, harga});
-            }
-        }  
-        
-        catch(Exception e) {
-            e.printStackTrace();
-        }
-    }
+//    public void load_table(javax.swing.JTable tableTransaksi) {
+//        try {
+//            DefaultTableModel tableModel = (DefaultTableModel) tableTransaksi.getModel();
+//            
+//            ResultSet dataTable = querry_select("datamobil", "status", "ready");
+//            
+//            tableModel.setRowCount(0);
+//            
+//            while(dataTable.next()) {
+//                String merk = dataTable.getString("merk");
+//                int id = dataTable.getInt("id_mobil");
+//                String  tahun = dataTable.getString("tahun");
+//                String noPolisi = dataTable.getString("no_pol");
+//                String harga = dataTable.getString("harga");
+//                
+//                tableModel.addRow(new Object[] { id, merk, tahun, noPolisi, harga});
+//            }
+//        }  
+//        
+//        catch(Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
     
     public void add_peminjam(String nama, String telepon, String email, String alamat, String no_pol, String date, String duration) {
         try {

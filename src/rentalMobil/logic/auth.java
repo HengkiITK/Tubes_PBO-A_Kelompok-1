@@ -8,8 +8,6 @@ import rentalMobil.view.login;
 import java.sql.ResultSet;
 
 
-
-
 public class auth extends KoneksiDatabase{
     String username;
     String password;

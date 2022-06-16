@@ -14,13 +14,14 @@ import rentalMobil.logic.menu;
  */
 public class ViewMobil extends javax.swing.JFrame {
     public DataMobil dataMobil;
+    private String [] rowTitleAll = {"id_mobil", "merk", "tahun", "no_pol", "harga", "status"};
     /**
      * Creates new form DataMobil
      */
     public ViewMobil() {
         DataMobil dataMobil = new DataMobil();
         initComponents();
-        dataMobil.load_table(tableMobil);
+        dataMobil.load_table(tableMobil, "datamobil", rowTitleAll, "", "");
     }
 
     /**
@@ -286,7 +287,7 @@ public class ViewMobil extends javax.swing.JFrame {
             e.printStackTrace();
         }
         
-       dataMobil.load_table(tableMobil);
+       dataMobil.load_table(tableMobil,"datamobil", rowTitleAll, "", "");
        merk.setText("");
        no_pol.setText("");
        tahun.setText("");
@@ -301,43 +302,12 @@ public class ViewMobil extends javax.swing.JFrame {
     private void deleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteMouseClicked
         DataMobil dataMobil = new DataMobil();
         dataMobil.delete_mobil(no_pol.getText());
-        dataMobil.load_table(tableMobil);
+        dataMobil.load_table(tableMobil, "datamobil", rowTitleAll, "", "");
     }//GEN-LAST:event_deleteMouseClicked
 
     /**
      * @param args the command line arguments
      */
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(DataMobil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(DataMobil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(DataMobil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(DataMobil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new ViewMobil().setVisible(true);
-//            }
-//        });
-//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back;

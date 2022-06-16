@@ -17,30 +17,30 @@ public class DataMobil extends KoneksiDatabase{
         new ViewMobil().setVisible(true);
     }
     
-    public void load_table(javax.swing.JTable tableDataPem) {
-        try {
-            DefaultTableModel tableModel = (DefaultTableModel) tableDataPem.getModel();
-            
-            ResultSet dataTable = querry_selectAll("datamobil");
-            
-            tableModel.setRowCount(0);
-            
-            while(dataTable.next()) {
-                int id = dataTable.getInt("id_mobil");
-                String merk = dataTable.getString("merk");
-                String tahun = dataTable.getString("tahun");
-                String no_pol = dataTable.getString("no_pol");
-                String harga = dataTable.getString("harga");
-                String status = dataTable.getString("status");
-                
-                tableModel.addRow(new Object[] {id, merk, no_pol, tahun, harga, status});
-            }
-            
-        }  
-        catch(Exception e) {
-            e.printStackTrace();
-        }
-    }
+//    public void load_table(javax.swing.JTable tableDataPem) {
+//        try {
+//            DefaultTableModel tableModel = (DefaultTableModel) tableDataPem.getModel();
+//            
+//            ResultSet dataTable = querry_selectAll("datamobil");
+//            
+//            tableModel.setRowCount(0);
+//            
+//            while(dataTable.next()) {
+//                int id = dataTable.getInt("id_mobil");
+//                String merk = dataTable.getString("merk");
+//                String tahun = dataTable.getString("tahun");
+//                String no_pol = dataTable.getString("no_pol");
+//                String harga = dataTable.getString("harga");
+//                String status = dataTable.getString("status");
+//                
+//                tableModel.addRow(new Object[] {id, merk, no_pol, tahun, harga, status});
+//            }
+//            
+//        }  
+//        catch(Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
     
     public void add_mobil(String merk, String tahun, String no_pol, String harga){
         String[] column = {"merk", "tahun", "no_pol", "harga", "status"};

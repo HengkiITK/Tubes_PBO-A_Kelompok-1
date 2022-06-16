@@ -17,28 +17,29 @@ public class form_user extends KoneksiDatabase{
         new ViewFormUser().setVisible(true);
     }
     
-    public void load_table(javax.swing.JTable table){
-        try {
-            DefaultTableModel tableModel = (DefaultTableModel) table.getModel();
-            
-            ResultSet dataTable = querry_selectAll("datauser");
-            
-            tableModel.setRowCount(0);
-            
-            while(dataTable.next()) {
-                int id = dataTable.getInt("id_user");
-                String nama = dataTable.getString("nama");
-                String username = dataTable.getString("username");
-                
-                tableModel.addRow(new Object[] {id, nama, username});
-            }
-            
-        }  
-        catch(Exception e) {
-            e.printStackTrace();
-        }
-    }
-    
+//    @Override
+//    public void load_table(javax.swing.JTable table){
+//        try {
+//            DefaultTableModel tableModel = (DefaultTableModel) table.getModel();
+//            
+//            ResultSet dataTable = querry_selectAll("datauser");
+//            
+//            tableModel.setRowCount(0);
+//            
+//            while(dataTable.next()) {
+//                int id = dataTable.getInt("id_user");
+//                String nama = dataTable.getString("nama");
+//                String username = dataTable.getString("username");
+//                
+//                tableModel.addRow(new Object[] {id, nama, username});
+//            }
+//            
+//        }  
+//        catch(Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
+//    
     public void add_user(String name, String username, String password) {
         String[] column = {"nama", "username", "password"};
         String[] data = {name, username, password};

@@ -4,13 +4,7 @@
  */
 package rentalMobil.view;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;  
-import java.util.Date; 
-import java.util.Locale;
-import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 import rentalMobil.logic.form_pengembalian;
 import rentalMobil.logic.menu;
 
@@ -383,7 +377,7 @@ public class ViewFormPengembalian extends javax.swing.JFrame {
 
     private void bayarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bayarMouseClicked
         form_pengembalian.pengembalian(id_transaksi.getText(), no_pol.getText(), tgl_kembali.getText(), denda.getText());
-        form_pengembalian.load_table(tableTransaksi);
+//        form_pengembalian.load_table(tableTransaksi);
         
         id_transaksi.setText("");
         no_pol.setText("");
