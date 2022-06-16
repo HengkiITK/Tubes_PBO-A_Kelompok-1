@@ -31,4 +31,8 @@ public class menu implements form{
     public void user(){
         new form_user().run();
     }
+    
+    public void riwayat() {
+        new riwayat().run();      
+    }
 }

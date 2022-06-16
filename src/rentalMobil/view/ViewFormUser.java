@@ -13,6 +13,7 @@ import rentalMobil.logic.menu;
  */
 public class ViewFormUser extends javax.swing.JFrame {
     public form_user form_user;
+    String [] rowTitleAll = {"id_user", "nama", "username"};
     
     /**
      * Creates new form ViewFormUser
@@ -20,7 +21,7 @@ public class ViewFormUser extends javax.swing.JFrame {
     public ViewFormUser() {
         form_user = new form_user();
         initComponents();
-        form_user.load_table(tableUser);
+        form_user.load_table(tableUser, "datauser", rowTitleAll, "", "");
     }
 
     /**
@@ -201,7 +202,7 @@ public class ViewFormUser extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                .addGap(61, 61, 61)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -214,10 +215,10 @@ public class ViewFormUser extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(password))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(simpan, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(delete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(delete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(simpan, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(78, 78, 78))
         );
@@ -245,7 +246,7 @@ public class ViewFormUser extends javax.swing.JFrame {
 
     private void simpanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_simpanMouseClicked
         form_user.add_user(name.getText(), username.getText(), password.getText());
-        form_user.load_table(tableUser);
+        form_user.load_table(tableUser, "datauser", rowTitleAll, "", "");
     }//GEN-LAST:event_simpanMouseClicked
 
     private void simpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpanActionPerformed
@@ -258,7 +259,7 @@ public class ViewFormUser extends javax.swing.JFrame {
 
     private void deleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteMouseClicked
         form_user.delete_user(username.getText());
-        form_user.load_table(tableUser);
+        form_user.load_table(tableUser, "datauser", rowTitleAll, "", "");
     }//GEN-LAST:event_deleteMouseClicked
 
     private void backMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseEntered
